@@ -10,6 +10,8 @@
 		3F52F5611AAF8D250001E532 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52F5601AAF8D250001E532 /* Place.m */; };
 		3F52F5641AAF8D250001E532 /* PlaceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52F5631AAF8D250001E532 /* PlaceList.m */; };
 		3F52F5671AAF8D250001E532 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52F5661AAF8D250001E532 /* Media.m */; };
+		3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C3571AB6312F00F1A898 /* MainViewController.m */; };
+		3F55C35A1AB7372200F1A898 /* VenueSimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C3591AB7372200F1A898 /* VenueSimpleCell.xib */; };
 		3F7182661A9FB78B0096BD52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182651A9FB78B0096BD52 /* main.m */; };
 		3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182681A9FB78B0096BD52 /* AppDelegate.m */; };
 		3F71826C1A9FB78B0096BD52 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F71826B1A9FB78B0096BD52 /* MasterViewController.m */; };
@@ -40,6 +42,9 @@
 		3F52F5631AAF8D250001E532 /* PlaceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceList.m; sourceTree = "<group>"; };
 		3F52F5651AAF8D250001E532 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
 		3F52F5661AAF8D250001E532 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		3F55C3561AB6312F00F1A898 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3F55C3571AB6312F00F1A898 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3F55C3591AB7372200F1A898 /* VenueSimpleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueSimpleCell.xib; sourceTree = "<group>"; };
 		3F7182601A9FB78B0096BD52 /* iPhoneClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7182641A9FB78B0096BD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7182651A9FB78B0096BD52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,8 +109,11 @@
 			children = (
 				3F7182671A9FB78B0096BD52 /* AppDelegate.h */,
 				3F7182681A9FB78B0096BD52 /* AppDelegate.m */,
+				3F55C3561AB6312F00F1A898 /* MainViewController.h */,
+				3F55C3571AB6312F00F1A898 /* MainViewController.m */,
 				3F71826A1A9FB78B0096BD52 /* MasterViewController.h */,
 				3F71826B1A9FB78B0096BD52 /* MasterViewController.m */,
+				3F55C3591AB7372200F1A898 /* VenueSimpleCell.xib */,
 				3F71826D1A9FB78B0096BD52 /* DetailViewController.h */,
 				3F71826E1A9FB78B0096BD52 /* DetailViewController.m */,
 				3F7182701A9FB78B0096BD52 /* Main.storyboard */,
@@ -249,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */,
+				3F55C35A1AB7372200F1A898 /* VenueSimpleCell.xib in Resources */,
 				3F7182771A9FB78B0096BD52 /* LaunchScreen.xib in Resources */,
 				3F7182741A9FB78B0096BD52 /* Images.xcassets in Resources */,
 			);
@@ -305,6 +314,7 @@
 				3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */,
 				3F52F5671AAF8D250001E532 /* Media.m in Sources */,
 				3FD5AC711AAE4E800034D239 /* DataModel.xcdatamodeld in Sources */,
+				3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */,
 				3F71826C1A9FB78B0096BD52 /* MasterViewController.m in Sources */,
 				3F52F5611AAF8D250001E532 /* Place.m in Sources */,
 				3F7182661A9FB78B0096BD52 /* main.m in Sources */,
