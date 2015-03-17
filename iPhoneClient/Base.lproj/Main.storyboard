@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0F-ze-BQI">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0F-ze-BQI">
                                 <rect key="frame" x="110" y="112" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="QU4-9b-rCV"/>
@@ -39,8 +39,13 @@
                                         <include reference="pRi-MT-qxP"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="rS3-R9-Ivy" kind="popoverPresentation" popoverAnchorView="s0F-ze-BQI" id="01j-a9-zXX">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwX-vQ-Arh">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwX-vQ-Arh">
                                 <rect key="frame" x="315" y="313" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="2kD-9D-Y2b"/>
@@ -63,8 +68,11 @@
                                         <include reference="LLS-jI-C3l"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="rS3-R9-Ivy" kind="show" identifier="showCafes" id="d1l-Pz-yNv"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3q-2m-a7p">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3q-2m-a7p">
                                 <rect key="frame" x="110" y="313" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Obf-00-5cb"/>
@@ -87,8 +95,11 @@
                                         <include reference="izO-XD-hOu"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="rS3-R9-Ivy" kind="show" id="0CJ-9y-nYB"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tye-sD-2Pd">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tye-sD-2Pd">
                                 <rect key="frame" x="315" y="112" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Wej-3b-oQb"/>
@@ -111,27 +122,24 @@
                                         <include reference="m6E-sf-lIl"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="rS3-R9-Ivy" kind="show" id="20i-bq-UtX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show me what's going" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKn-TC-VxN">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="56" y="75" width="289" height="45"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="on at nearby:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWz-il-ZSG">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="117" y="107" width="166" height="45"/>
-                                </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.44313725490196076" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.4039215686" green="0.2274509804" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Tye-sD-2Pd" firstAttribute="top" secondItem="s0F-ze-BQI" secondAttribute="top" id="35P-OG-Rw7"/>
                             <constraint firstItem="Tye-sD-2Pd" firstAttribute="leading" secondItem="s0F-ze-BQI" secondAttribute="trailing" constant="10" id="3GV-4o-Pbs"/>
@@ -156,17 +164,17 @@
                                 <exclude reference="HWz-il-ZSG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Gm5-aH-iKC"/>
-                                <exclude reference="VWv-kU-eUH"/>
                                 <exclude reference="7OJ-8N-qUN"/>
                                 <exclude reference="e0Q-9b-fQB"/>
+                                <exclude reference="Gm5-aH-iKC"/>
+                                <exclude reference="VWv-kU-eUH"/>
                                 <exclude reference="fPu-QP-hqO"/>
-                                <exclude reference="35P-OG-Rw7"/>
-                                <exclude reference="3GV-4o-Pbs"/>
-                                <exclude reference="wgW-ss-vBr"/>
                                 <exclude reference="89A-Xs-1ve"/>
                                 <exclude reference="Dx6-Mc-Mhv"/>
                                 <exclude reference="S7p-PF-TrR"/>
+                                <exclude reference="35P-OG-Rw7"/>
+                                <exclude reference="3GV-4o-Pbs"/>
+                                <exclude reference="wgW-ss-vBr"/>
                                 <exclude reference="ad0-fa-HTi"/>
                             </mask>
                         </variation>
@@ -176,17 +184,17 @@
                                 <include reference="HWz-il-ZSG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Gm5-aH-iKC"/>
-                                <include reference="VWv-kU-eUH"/>
                                 <include reference="7OJ-8N-qUN"/>
                                 <include reference="e0Q-9b-fQB"/>
+                                <include reference="Gm5-aH-iKC"/>
+                                <include reference="VWv-kU-eUH"/>
                                 <include reference="fPu-QP-hqO"/>
-                                <include reference="35P-OG-Rw7"/>
-                                <include reference="3GV-4o-Pbs"/>
-                                <include reference="wgW-ss-vBr"/>
                                 <include reference="89A-Xs-1ve"/>
                                 <include reference="Dx6-Mc-Mhv"/>
                                 <include reference="S7p-PF-TrR"/>
+                                <include reference="35P-OG-Rw7"/>
+                                <include reference="3GV-4o-Pbs"/>
+                                <include reference="wgW-ss-vBr"/>
                                 <include reference="ad0-fa-HTi"/>
                             </mask>
                         </variation>
@@ -254,7 +262,9 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Title" id="MiQ-fi-jbm"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,4 +307,7 @@
             <point key="canvasLocation" x="1343" y="64"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="01j-a9-zXX"/>
+    </inferredMetricsTieBreakers>
 </document>

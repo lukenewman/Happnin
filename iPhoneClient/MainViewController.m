@@ -10,6 +10,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "MasterViewController.h"
+
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *barsButton;
@@ -30,7 +32,6 @@
     [self.barsButton.layer setBorderWidth:1.0f];
     [self.barsButton.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self.barsButton.layer setCornerRadius:10.0f];
-    //self.barsButton.frame = CGRectMake(self.barsButton.layer., <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
     
     [self.restaurantsButton.layer setBorderWidth:1.0f];
     [self.restaurantsButton.layer setBorderColor:[UIColor whiteColor].CGColor];
@@ -43,6 +44,24 @@
     [self.cafesButton.layer setBorderWidth:1.0f];
     [self.cafesButton.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self.cafesButton.layer setCornerRadius:10.0f];
+}
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UINavigationController *navController = (UINavigationController*)[segue destinationViewController];
+    MasterViewController *destViewController = (MasterViewController* )[navController topViewController];
+    
+    // this doesn't work --- yet!
+    if ([[segue identifier] isEqualToString:@"showRestaurants"]) {
+        destViewController.navigationItem.title = @"Restaurants";
+    } else if ([[segue identifier] isEqualToString:@"showBars"]) {
+        destViewController.navigationItem.title = @"Bars";
+    } else if ([[segue identifier] isEqualToString:@"showClubs"]) {
+        destViewController.navigationItem.title = @"Clubs";
+    } else if ([[segue identifier] isEqualToString:@"showCafes"]) {
+        destViewController.navigationItem.title = @"Cafes";
+    }
 }
 
 /*
