@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F71825F1A9FB78B0096BD52"
-               BuildableName = "iPhoneClient.app"
-               BlueprintName = "iPhoneClient"
-               ReferencedContainer = "container:iPhoneClient.xcodeproj">
+               BuildableName = "Happnin.app"
+               BlueprintName = "Happnin"
+               ReferencedContainer = "container:Happnin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F71827B1A9FB78B0096BD52"
-               BuildableName = "iPhoneClientTests.xctest"
-               BlueprintName = "iPhoneClientTests"
-               ReferencedContainer = "container:iPhoneClient.xcodeproj">
+               BuildableName = "HappninTests.xctest"
+               BlueprintName = "HappninTests"
+               ReferencedContainer = "container:Happnin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F71827B1A9FB78B0096BD52"
-               BuildableName = "iPhoneClientTests.xctest"
-               BlueprintName = "iPhoneClientTests"
-               ReferencedContainer = "container:iPhoneClient.xcodeproj">
+               BuildableName = "HappninTests.xctest"
+               BlueprintName = "HappninTests"
+               ReferencedContainer = "container:Happnin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F71825F1A9FB78B0096BD52"
-            BuildableName = "iPhoneClient.app"
-            BlueprintName = "iPhoneClient"
-            ReferencedContainer = "container:iPhoneClient.xcodeproj">
+            BuildableName = "Happnin.app"
+            BlueprintName = "Happnin"
+            ReferencedContainer = "container:Happnin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F71825F1A9FB78B0096BD52"
-            BuildableName = "iPhoneClient.app"
-            BlueprintName = "iPhoneClient"
-            ReferencedContainer = "container:iPhoneClient.xcodeproj">
+            BuildableName = "Happnin.app"
+            BlueprintName = "Happnin"
+            ReferencedContainer = "container:Happnin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F71825F1A9FB78B0096BD52"
-            BuildableName = "iPhoneClient.app"
-            BlueprintName = "iPhoneClient"
-            ReferencedContainer = "container:iPhoneClient.xcodeproj">
+            BuildableName = "Happnin.app"
+            BlueprintName = "Happnin"
+            ReferencedContainer = "container:Happnin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

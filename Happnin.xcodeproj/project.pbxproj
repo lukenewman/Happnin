@@ -11,7 +11,6 @@
 		3F52F5641AAF8D250001E532 /* PlaceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52F5631AAF8D250001E532 /* PlaceList.m */; };
 		3F52F5671AAF8D250001E532 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52F5661AAF8D250001E532 /* Media.m */; };
 		3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C3571AB6312F00F1A898 /* MainViewController.m */; };
-		3F55C35A1AB7372200F1A898 /* VenueSimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F55C3591AB7372200F1A898 /* VenueSimpleCell.xib */; };
 		3F7182661A9FB78B0096BD52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182651A9FB78B0096BD52 /* main.m */; };
 		3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182681A9FB78B0096BD52 /* AppDelegate.m */; };
 		3F71826C1A9FB78B0096BD52 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F71826B1A9FB78B0096BD52 /* MasterViewController.m */; };
@@ -44,7 +43,6 @@
 		3F52F5661AAF8D250001E532 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
 		3F55C3561AB6312F00F1A898 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3F55C3571AB6312F00F1A898 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		3F55C3591AB7372200F1A898 /* VenueSimpleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueSimpleCell.xib; sourceTree = "<group>"; };
 		3F7182601A9FB78B0096BD52 /* iPhoneClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7182641A9FB78B0096BD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7182651A9FB78B0096BD52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,7 +55,7 @@
 		3F7182711A9FB78B0096BD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F7182731A9FB78B0096BD52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3F7182761A9FB78B0096BD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3F71827C1A9FB78B0096BD52 /* iPhoneClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhoneClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F71827C1A9FB78B0096BD52 /* HappninTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappninTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7182811A9FB78B0096BD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7182821A9FB78B0096BD52 /* iPhoneClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPhoneClientTests.m; sourceTree = "<group>"; };
 		3FD5AC701AAE4E800034D239 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -99,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7182601A9FB78B0096BD52 /* iPhoneClient.app */,
-				3F71827C1A9FB78B0096BD52 /* iPhoneClientTests.xctest */,
+				3F71827C1A9FB78B0096BD52 /* HappninTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,7 +111,6 @@
 				3F55C3571AB6312F00F1A898 /* MainViewController.m */,
 				3F71826A1A9FB78B0096BD52 /* MasterViewController.h */,
 				3F71826B1A9FB78B0096BD52 /* MasterViewController.m */,
-				3F55C3591AB7372200F1A898 /* VenueSimpleCell.xib */,
 				3F71826D1A9FB78B0096BD52 /* DetailViewController.h */,
 				3F71826E1A9FB78B0096BD52 /* DetailViewController.m */,
 				3F7182701A9FB78B0096BD52 /* Main.storyboard */,
@@ -177,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F71825F1A9FB78B0096BD52 /* iPhoneClient */ = {
+		3F71825F1A9FB78B0096BD52 /* Happnin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F7182861A9FB78B0096BD52 /* Build configuration list for PBXNativeTarget "iPhoneClient" */;
+			buildConfigurationList = 3F7182861A9FB78B0096BD52 /* Build configuration list for PBXNativeTarget "Happnin" */;
 			buildPhases = (
 				F95A4B4E8D97C35801D97B04 /* Check Pods Manifest.lock */,
 				3F71825C1A9FB78B0096BD52 /* Sources */,
@@ -191,14 +188,14 @@
 			);
 			dependencies = (
 			);
-			name = iPhoneClient;
+			name = Happnin;
 			productName = iPhoneClient;
 			productReference = 3F7182601A9FB78B0096BD52 /* iPhoneClient.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3F71827B1A9FB78B0096BD52 /* iPhoneClientTests */ = {
+		3F71827B1A9FB78B0096BD52 /* HappninTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F7182891A9FB78B0096BD52 /* Build configuration list for PBXNativeTarget "iPhoneClientTests" */;
+			buildConfigurationList = 3F7182891A9FB78B0096BD52 /* Build configuration list for PBXNativeTarget "HappninTests" */;
 			buildPhases = (
 				3F7182781A9FB78B0096BD52 /* Sources */,
 				3F7182791A9FB78B0096BD52 /* Frameworks */,
@@ -209,9 +206,9 @@
 			dependencies = (
 				3F71827E1A9FB78B0096BD52 /* PBXTargetDependency */,
 			);
-			name = iPhoneClientTests;
+			name = HappninTests;
 			productName = iPhoneClientTests;
-			productReference = 3F71827C1A9FB78B0096BD52 /* iPhoneClientTests.xctest */;
+			productReference = 3F71827C1A9FB78B0096BD52 /* HappninTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F71825B1A9FB78B0096BD52 /* Build configuration list for PBXProject "iPhoneClient" */;
+			buildConfigurationList = 3F71825B1A9FB78B0096BD52 /* Build configuration list for PBXProject "Happnin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -246,8 +243,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F71825F1A9FB78B0096BD52 /* iPhoneClient */,
-				3F71827B1A9FB78B0096BD52 /* iPhoneClientTests */,
+				3F71825F1A9FB78B0096BD52 /* Happnin */,
+				3F71827B1A9FB78B0096BD52 /* HappninTests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,7 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */,
-				3F55C35A1AB7372200F1A898 /* VenueSimpleCell.xib in Resources */,
 				3F7182771A9FB78B0096BD52 /* LaunchScreen.xib in Resources */,
 				3F7182741A9FB78B0096BD52 /* Images.xcassets in Resources */,
 			);
@@ -336,7 +332,7 @@
 /* Begin PBXTargetDependency section */
 		3F71827E1A9FB78B0096BD52 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F71825F1A9FB78B0096BD52 /* iPhoneClient */;
+			target = 3F71825F1A9FB78B0096BD52 /* Happnin */;
 			targetProxy = 3F71827D1A9FB78B0096BD52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -446,7 +442,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iPhoneClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Happnin;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -460,7 +456,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iPhoneClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Happnin;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -479,7 +475,7 @@
 				);
 				INFOPLIST_FILE = iPhoneClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HappninTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPhoneClient.app/iPhoneClient";
 			};
 			name = Debug;
@@ -494,7 +490,7 @@
 				);
 				INFOPLIST_FILE = iPhoneClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HappninTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPhoneClient.app/iPhoneClient";
 			};
 			name = Release;
@@ -502,7 +498,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F71825B1A9FB78B0096BD52 /* Build configuration list for PBXProject "iPhoneClient" */ = {
+		3F71825B1A9FB78B0096BD52 /* Build configuration list for PBXProject "Happnin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F7182841A9FB78B0096BD52 /* Debug */,
@@ -511,7 +507,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F7182861A9FB78B0096BD52 /* Build configuration list for PBXNativeTarget "iPhoneClient" */ = {
+		3F7182861A9FB78B0096BD52 /* Build configuration list for PBXNativeTarget "Happnin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F7182871A9FB78B0096BD52 /* Debug */,
@@ -520,7 +516,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F7182891A9FB78B0096BD52 /* Build configuration list for PBXNativeTarget "iPhoneClientTests" */ = {
+		3F7182891A9FB78B0096BD52 /* Build configuration list for PBXNativeTarget "HappninTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F71828A1A9FB78B0096BD52 /* Debug */,
