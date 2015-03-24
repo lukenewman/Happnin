@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F42D66B1AC06C1900E1E274 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D66A1AC06C1900E1E274 /* Tweet.m */; };
-		3F42D66E1AC06C1900E1E274 /* Instagram.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D66D1AC06C1900E1E274 /* Instagram.m */; };
-		3F52F5611AAF8D250001E532 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52F5601AAF8D250001E532 /* Place.m */; };
-		3F52F5641AAF8D250001E532 /* PlaceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52F5631AAF8D250001E532 /* PlaceList.m */; };
-		3F52F5671AAF8D250001E532 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52F5661AAF8D250001E532 /* Media.m */; };
+		3F42D6711AC1B70900E1E274 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6701AC1B70900E1E274 /* Media.m */; };
+		3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6731AC1B70A00E1E274 /* Tweet.m */; };
+		3F42D6771AC1B70A00E1E274 /* PlaceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6761AC1B70A00E1E274 /* PlaceList.m */; };
+		3F42D67A1AC1B70A00E1E274 /* Instagram.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6791AC1B70A00E1E274 /* Instagram.m */; };
+		3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D67C1AC1B70A00E1E274 /* Place.m */; };
 		3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C3571AB6312F00F1A898 /* MainViewController.m */; };
 		3F7182661A9FB78B0096BD52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182651A9FB78B0096BD52 /* main.m */; };
 		3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182681A9FB78B0096BD52 /* AppDelegate.m */; };
-		3F71826C1A9FB78B0096BD52 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F71826B1A9FB78B0096BD52 /* MasterViewController.m */; };
-		3F71826F1A9FB78B0096BD52 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F71826E1A9FB78B0096BD52 /* DetailViewController.m */; };
+		3F71826C1A9FB78B0096BD52 /* PlaceListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F71826B1A9FB78B0096BD52 /* PlaceListTableViewController.m */; };
 		3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182701A9FB78B0096BD52 /* Main.storyboard */; };
 		3F7182741A9FB78B0096BD52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182731A9FB78B0096BD52 /* Images.xcassets */; };
 		3F7182771A9FB78B0096BD52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182751A9FB78B0096BD52 /* LaunchScreen.xib */; };
@@ -37,27 +36,25 @@
 
 /* Begin PBXFileReference section */
 		0D6116F140468124AC27DF66 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		3F42D6691AC06C1900E1E274 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
-		3F42D66A1AC06C1900E1E274 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
-		3F42D66C1AC06C1900E1E274 /* Instagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instagram.h; sourceTree = "<group>"; };
-		3F42D66D1AC06C1900E1E274 /* Instagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instagram.m; sourceTree = "<group>"; };
-		3F52F55F1AAF8D250001E532 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
-		3F52F5601AAF8D250001E532 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
-		3F52F5621AAF8D250001E532 /* PlaceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceList.h; sourceTree = "<group>"; };
-		3F52F5631AAF8D250001E532 /* PlaceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceList.m; sourceTree = "<group>"; };
-		3F52F5651AAF8D250001E532 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
-		3F52F5661AAF8D250001E532 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		3F42D66F1AC1B70900E1E274 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
+		3F42D6701AC1B70900E1E274 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		3F42D6721AC1B70A00E1E274 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		3F42D6731AC1B70A00E1E274 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		3F42D6751AC1B70A00E1E274 /* PlaceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceList.h; sourceTree = "<group>"; };
+		3F42D6761AC1B70A00E1E274 /* PlaceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceList.m; sourceTree = "<group>"; };
+		3F42D6781AC1B70A00E1E274 /* Instagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instagram.h; sourceTree = "<group>"; };
+		3F42D6791AC1B70A00E1E274 /* Instagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instagram.m; sourceTree = "<group>"; };
+		3F42D67B1AC1B70A00E1E274 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		3F42D67C1AC1B70A00E1E274 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		3F55C3561AB6312F00F1A898 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3F55C3571AB6312F00F1A898 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		3F7182601A9FB78B0096BD52 /* iPhoneClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F7182601A9FB78B0096BD52 /* Happnin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happnin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7182641A9FB78B0096BD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7182651A9FB78B0096BD52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F7182671A9FB78B0096BD52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F7182681A9FB78B0096BD52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3F71826A1A9FB78B0096BD52 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		3F71826B1A9FB78B0096BD52 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		3F71826D1A9FB78B0096BD52 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		3F71826E1A9FB78B0096BD52 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		3F71826A1A9FB78B0096BD52 /* PlaceListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceListTableViewController.h; sourceTree = "<group>"; };
+		3F71826B1A9FB78B0096BD52 /* PlaceListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceListTableViewController.m; sourceTree = "<group>"; };
 		3F7182711A9FB78B0096BD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F7182731A9FB78B0096BD52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3F7182761A9FB78B0096BD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -102,7 +99,7 @@
 		3F7182611A9FB78B0096BD52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F7182601A9FB78B0096BD52 /* iPhoneClient.app */,
+				3F7182601A9FB78B0096BD52 /* Happnin.app */,
 				3F71827C1A9FB78B0096BD52 /* HappninTests.xctest */,
 			);
 			name = Products;
@@ -115,25 +112,23 @@
 				3F7182681A9FB78B0096BD52 /* AppDelegate.m */,
 				3F55C3561AB6312F00F1A898 /* MainViewController.h */,
 				3F55C3571AB6312F00F1A898 /* MainViewController.m */,
-				3F71826A1A9FB78B0096BD52 /* MasterViewController.h */,
-				3F71826B1A9FB78B0096BD52 /* MasterViewController.m */,
-				3F71826D1A9FB78B0096BD52 /* DetailViewController.h */,
-				3F71826E1A9FB78B0096BD52 /* DetailViewController.m */,
+				3F71826A1A9FB78B0096BD52 /* PlaceListTableViewController.h */,
+				3F71826B1A9FB78B0096BD52 /* PlaceListTableViewController.m */,
 				3F7182701A9FB78B0096BD52 /* Main.storyboard */,
 				3F7182731A9FB78B0096BD52 /* Images.xcassets */,
 				3F7182751A9FB78B0096BD52 /* LaunchScreen.xib */,
 				3F7182631A9FB78B0096BD52 /* Supporting Files */,
 				3FD5AC6F1AAE4E800034D239 /* DataModel.xcdatamodeld */,
-				3F42D66C1AC06C1900E1E274 /* Instagram.h */,
-				3F42D66D1AC06C1900E1E274 /* Instagram.m */,
-				3F42D6691AC06C1900E1E274 /* Tweet.h */,
-				3F42D66A1AC06C1900E1E274 /* Tweet.m */,
-				3F52F5651AAF8D250001E532 /* Media.h */,
-				3F52F5661AAF8D250001E532 /* Media.m */,
-				3F52F5621AAF8D250001E532 /* PlaceList.h */,
-				3F52F5631AAF8D250001E532 /* PlaceList.m */,
-				3F52F55F1AAF8D250001E532 /* Place.h */,
-				3F52F5601AAF8D250001E532 /* Place.m */,
+				3F42D67B1AC1B70A00E1E274 /* Place.h */,
+				3F42D67C1AC1B70A00E1E274 /* Place.m */,
+				3F42D6781AC1B70A00E1E274 /* Instagram.h */,
+				3F42D6791AC1B70A00E1E274 /* Instagram.m */,
+				3F42D6751AC1B70A00E1E274 /* PlaceList.h */,
+				3F42D6761AC1B70A00E1E274 /* PlaceList.m */,
+				3F42D6721AC1B70A00E1E274 /* Tweet.h */,
+				3F42D6731AC1B70A00E1E274 /* Tweet.m */,
+				3F42D66F1AC1B70900E1E274 /* Media.h */,
+				3F42D6701AC1B70900E1E274 /* Media.m */,
 			);
 			path = iPhoneClient;
 			sourceTree = "<group>";
@@ -200,7 +195,7 @@
 			);
 			name = Happnin;
 			productName = iPhoneClient;
-			productReference = 3F7182601A9FB78B0096BD52 /* iPhoneClient.app */;
+			productReference = 3F7182601A9FB78B0096BD52 /* Happnin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3F71827B1A9FB78B0096BD52 /* HappninTests */ = {
@@ -317,17 +312,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F52F5641AAF8D250001E532 /* PlaceList.m in Sources */,
+				3F42D6711AC1B70900E1E274 /* Media.m in Sources */,
 				3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */,
-				3F52F5671AAF8D250001E532 /* Media.m in Sources */,
 				3FD5AC711AAE4E800034D239 /* DataModel.xcdatamodeld in Sources */,
+				3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */,
 				3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */,
-				3F71826C1A9FB78B0096BD52 /* MasterViewController.m in Sources */,
-				3F52F5611AAF8D250001E532 /* Place.m in Sources */,
-				3F42D66E1AC06C1900E1E274 /* Instagram.m in Sources */,
-				3F42D66B1AC06C1900E1E274 /* Tweet.m in Sources */,
+				3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */,
+				3F71826C1A9FB78B0096BD52 /* PlaceListTableViewController.m in Sources */,
 				3F7182661A9FB78B0096BD52 /* main.m in Sources */,
-				3F71826F1A9FB78B0096BD52 /* DetailViewController.m in Sources */,
+				3F42D6771AC1B70A00E1E274 /* PlaceList.m in Sources */,
+				3F42D67A1AC1B70A00E1E274 /* Instagram.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

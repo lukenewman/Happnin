@@ -1,22 +1,25 @@
 //
 //  Place.m
-//  iPhoneClient
+//  Happnin
 //
-//  Created by Luke Newman on 3/10/15.
+//  Created by Luke Newman on 3/24/15.
 //  Copyright (c) 2015 Luke Newman. All rights reserved.
 //
 
 #import "Place.h"
+#import "Media.h"
 
 
 @implementation Place
 
-@dynamic name;
-@dynamic thumbnail_url;
+@dynamic isClosed;
 @dynamic latitude;
 @dynamic longitude;
-@dynamic is_closed;
-@dynamic media;
-@dynamic place_list;
+@dynamic name;
+@dynamic imageURL;
+@dynamic identification;
+@dynamic address;
+@dynamic phoneNumber;
+@dynamic mediaList;
 
 @end

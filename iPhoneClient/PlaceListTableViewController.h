@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
+@interface PlaceListTableViewController : UITableViewController
 
+- (void)requestDataWithSection:(NSString *)section;
 
 @end
 

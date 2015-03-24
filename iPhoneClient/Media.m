@@ -1,17 +1,16 @@
 //
 //  Media.m
-//  iPhoneClient
+//  Happnin
 //
-//  Created by Luke Newman on 3/10/15.
+//  Created by Luke Newman on 3/24/15.
 //  Copyright (c) 2015 Luke Newman. All rights reserved.
 //
 
 #import "Media.h"
-#import "Place.h"
 
 
 @implementation Media
 
-@dynamic owner;
+@dynamic type;
 
 @end

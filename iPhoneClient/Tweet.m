@@ -2,7 +2,7 @@
 //  Tweet.m
 //  Happnin
 //
-//  Created by Luke Newman on 3/23/15.
+//  Created by Luke Newman on 3/24/15.
 //  Copyright (c) 2015 Luke Newman. All rights reserved.
 //
 
@@ -15,6 +15,5 @@
 @dynamic text;
 @dynamic username;
 @dynamic profileImageURL;
-@dynamic mediaType;
 
 @end

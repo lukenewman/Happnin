@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
 
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
@@ -78,40 +77,27 @@
     
     // '/medias'
     RKEntityMapping *mediaListMapping = [RKEntityMapping mappingForEntityForName:@"MediaList" inManagedObjectStore:managedObjectStore];
-    mediaListMapping.identificationAttributes = @[ @"" ];
+    //mediaListMapping.identificationAttributes = @[ @"" ];
     // ********** need to figure out if we need identification attribute for mediaList
+    
+    /**
+     
+     Need to figure out how to map the 'data' array into Media objects as either Twitter or Instagram objects based on the 'mediaType' JSON field
+     
+     */
+    
     
     // '/medias'
     RKEntityMapping *tweetMapping = [RKEntityMapping mappingForEntityForName:@"Tweet" inManagedObjectStore:managedObjectStore];
-    tweetMapping.identificationAttributes = @[ @"" ];
+    //tweetMapping.identificationAttributes = @[ @"" ];
     // ********** need to figure out if we need identification attribute for tweets
-    [tweetMapping addAttributeMappingsFromDictionary:
-        @{
-          @"createdAt": @"createdAt",
-          @"mediaType": @"mediaType",
-          @"text": @"text",
-          @"username": @"username",
-          @"profileImageURL": @"profileImageURL"
-          }
-     ];
+    [tweetMapping addAttributeMappingsFromArray: @[ @"createdAt", @"text", @"username", @"profileImageURL"]];
     
     // '/medias'
     RKEntityMapping *instagramMapping = [RKEntityMapping mappingForEntityForName:@"Instagram" inManagedObjectStore:managedObjectStore];
-    instagramMapping.identificationAttributes = @[ @"" ];
+    //instagramMapping.identificationAttributes = @[ @"" ];
     // ********** need to figure out if we need identification attribute for instagrams
-    [instagramMapping addAttributeMappingsFromDictionary:
-        @{
-          @"createdAt": @"createdAt",
-          @"mediaType": @"mediaType",
-          @"imageURL": @"imageURL",
-          @"username": @"username",
-          @"profileImageURL": @"profileImageURL",
-          @"caption": @"caption",
-          @"type": @"type",
-          @"width": @"width",
-          @"height": @"height"
-          }
-     ];
+    [instagramMapping addAttributeMappingsFromArray: @[ @"createdAt", @"imageURL", @"username", @"profileImageURL", @"caption", @"type", @"width", @"height" ]];
     
     // ----- RELATIONSHIP MAPPING -----
     
@@ -138,8 +124,8 @@
     RKResponseDescriptor *mediaListResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:mediaListMapping
                                                  method:RKRequestMethodGET
-                                            pathPattern:@"/medias/"
-                                                keyPath:nil
+                                            pathPattern:nil
+                                                keyPath:@"data"
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     // Add the response descriptors defined above to the object manager.

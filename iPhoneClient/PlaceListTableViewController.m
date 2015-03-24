@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 Luke Newman. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "PlaceListTableViewController.h"
 
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
@@ -15,13 +14,13 @@
 #import "PlaceList.h"
 #import "Place.h"
 
-@interface MasterViewController ()
+@interface PlaceListTableViewController ()
 
 @property NSArray *venues;
 
 @end
 
-@implementation MasterViewController
+@implementation PlaceListTableViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -34,23 +33,6 @@
 //    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 //    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:103 green:58 blue:183 alpha:1];
 //    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:103 green:58 blue:183 alpha:1];
-    
-    [self requestData];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Place *place = self.venues[indexPath.row];
-        [[segue destinationViewController] setDetailItem:place.name];
-    }
 }
 
 #pragma mark - Table View
@@ -78,21 +60,18 @@
 
 #pragma mark - RESTKit
 
-- (void)requestData {
+- (void)requestDataWithSection:(NSString *)section {
     
-    NSString *requestPath = @"/places";
+    NSLog(@"requesting data with section: %@", section);
     
     NSDictionary *parameters = @{
                                  @"loc": @"33.782139,-84.382166",
                                  @"radius": @"1500",
-                                 @"section": @"restaurants",
-                                 @"sort": @"2",
-                                 @"limit": @"20"
+                                 @"section": section
                                  };
     
-    [[RKObjectManager sharedManager]
-     getObjectsAtPath:requestPath
-     parameters:parameters
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"/places"
+                                           parameters:parameters
      success: ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
          //places have been saved in core data by now
          [self fetchPlacesFromContext];
@@ -104,21 +83,16 @@
 }
 
 - (void)fetchPlacesFromContext {
-    
     NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"PlaceList"];
-    
-//    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"category" ascending:YES];
-//    fetchRequest.sortDescriptors = @[descriptor];
     
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
     PlaceList *placeList = [fetchedObjects firstObject];
     
-    self.venues = [placeList.places allObjects];
-    
-    NSLog(@"VENUES: %@", self.venues);
+    NSLog(@"placeList category: %@", placeList.category);
+    NSLog(@"placeList places: %@", placeList.places);
     
     [self.tableView reloadData];
 }
