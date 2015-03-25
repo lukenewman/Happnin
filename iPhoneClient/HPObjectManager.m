@@ -9,13 +9,6 @@
 #import "HPObjectManager.h"
 #import <RestKit/RestKit.h>
 
-@interface HPObjectManager ()
-
-- (void) setupRequestDescriptors;
-- (void) setupResponseDescriptors;
-
-@end
-
 @implementation HPObjectManager
 
 + (instancetype) sharedManager {
@@ -23,7 +16,7 @@
     
     HPObjectManager *sharedManager = [self managerWithBaseURL:url];
     sharedManager.requestSerializationMIMEType = RKMIMETypeJSON;
-    sharedManager.managedObjectStore = managedObjectStore;
+//    sharedManager.managedObjectStore = managedObjectStore;
     
     /*
      THIS CLASS IS MAIN POINT OF CUSTOMIZATION

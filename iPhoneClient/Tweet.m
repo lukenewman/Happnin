@@ -8,12 +8,6 @@
 
 #import "Tweet.h"
 
-
 @implementation Tweet
-
-@dynamic createdAt;
-@dynamic text;
-@dynamic username;
-@dynamic profileImageURL;
 
 @end

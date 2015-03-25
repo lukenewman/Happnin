@@ -12,4 +12,8 @@
 
 + (instancetype) sharedManager;
 
+- (void) setupRequestDescriptors;
+
+- (void) setupResponseDescriptors;
+
 @end

@@ -8,16 +8,6 @@
 
 #import "Instagram.h"
 
-
 @implementation Instagram
-
-@dynamic createdAt;
-@dynamic imageURL;
-@dynamic username;
-@dynamic profileImageURL;
-@dynamic caption;
-@dynamic width;
-@dynamic height;
-@dynamic typeOfMedia;
 
 @end

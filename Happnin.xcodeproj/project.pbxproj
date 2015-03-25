@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3F42D6711AC1B70900E1E274 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6701AC1B70900E1E274 /* Media.m */; };
 		3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6731AC1B70A00E1E274 /* Tweet.m */; };
-		3F42D6771AC1B70A00E1E274 /* PlaceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6761AC1B70A00E1E274 /* PlaceList.m */; };
 		3F42D67A1AC1B70A00E1E274 /* Instagram.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6791AC1B70A00E1E274 /* Instagram.m */; };
 		3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D67C1AC1B70A00E1E274 /* Place.m */; };
 		3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C3571AB6312F00F1A898 /* MainViewController.m */; };
@@ -23,7 +22,6 @@
 		3F765B661AC303970042028C /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F765B651AC303970042028C /* MappingProvider.m */; };
 		3F765B691AC303EF0042028C /* HPObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F765B681AC303EF0042028C /* HPObjectManager.m */; };
 		3F765B6C1AC305C60042028C /* PlaceObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F765B6B1AC305C60042028C /* PlaceObjectManager.m */; };
-		3FD5AC711AAE4E800034D239 /* Happnin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FD5AC6F1AAE4E800034D239 /* Happnin.xcdatamodeld */; };
 		6783D71B8856D918112200F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 944350A05266297D57216CD2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +41,6 @@
 		3F42D6701AC1B70900E1E274 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
 		3F42D6721AC1B70A00E1E274 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		3F42D6731AC1B70A00E1E274 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
-		3F42D6751AC1B70A00E1E274 /* PlaceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceList.h; sourceTree = "<group>"; };
-		3F42D6761AC1B70A00E1E274 /* PlaceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceList.m; sourceTree = "<group>"; };
 		3F42D6781AC1B70A00E1E274 /* Instagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instagram.h; sourceTree = "<group>"; };
 		3F42D6791AC1B70A00E1E274 /* Instagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instagram.m; sourceTree = "<group>"; };
 		3F42D67B1AC1B70A00E1E274 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
@@ -70,7 +66,6 @@
 		3F765B681AC303EF0042028C /* HPObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPObjectManager.m; sourceTree = "<group>"; };
 		3F765B6A1AC305C60042028C /* PlaceObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceObjectManager.h; sourceTree = "<group>"; };
 		3F765B6B1AC305C60042028C /* PlaceObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceObjectManager.m; sourceTree = "<group>"; };
-		3FD5AC701AAE4E800034D239 /* Happnin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Happnin.xcdatamodel; sourceTree = "<group>"; };
 		944350A05266297D57216CD2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B5072797799C9B7FC99FE8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,13 +128,10 @@
 				3F7182731A9FB78B0096BD52 /* Images.xcassets */,
 				3F7182751A9FB78B0096BD52 /* LaunchScreen.xib */,
 				3F7182631A9FB78B0096BD52 /* Supporting Files */,
-				3FD5AC6F1AAE4E800034D239 /* Happnin.xcdatamodeld */,
 				3F42D67B1AC1B70A00E1E274 /* Place.h */,
 				3F42D67C1AC1B70A00E1E274 /* Place.m */,
 				3F42D6781AC1B70A00E1E274 /* Instagram.h */,
 				3F42D6791AC1B70A00E1E274 /* Instagram.m */,
-				3F42D6751AC1B70A00E1E274 /* PlaceList.h */,
-				3F42D6761AC1B70A00E1E274 /* PlaceList.m */,
 				3F42D6721AC1B70A00E1E274 /* Tweet.h */,
 				3F42D6731AC1B70A00E1E274 /* Tweet.m */,
 				3F42D66F1AC1B70900E1E274 /* Media.h */,
@@ -331,13 +323,11 @@
 				3F42D6711AC1B70900E1E274 /* Media.m in Sources */,
 				3F765B691AC303EF0042028C /* HPObjectManager.m in Sources */,
 				3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */,
-				3FD5AC711AAE4E800034D239 /* Happnin.xcdatamodeld in Sources */,
 				3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */,
 				3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */,
 				3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */,
 				3F71826C1A9FB78B0096BD52 /* PlaceListTableViewController.m in Sources */,
 				3F7182661A9FB78B0096BD52 /* main.m in Sources */,
-				3F42D6771AC1B70A00E1E274 /* PlaceList.m in Sources */,
 				3F765B6C1AC305C60042028C /* PlaceObjectManager.m in Sources */,
 				3F42D67A1AC1B70A00E1E274 /* Instagram.m in Sources */,
 			);
@@ -550,19 +540,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3FD5AC6F1AAE4E800034D239 /* Happnin.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3FD5AC701AAE4E800034D239 /* Happnin.xcdatamodel */,
-			);
-			currentVersion = 3FD5AC701AAE4E800034D239 /* Happnin.xcdatamodel */;
-			path = Happnin.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3F7182581A9FB78B0096BD52 /* Project object */;
 }

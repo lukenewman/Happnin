@@ -9,14 +9,16 @@
 #import "MappingProvider.h"
 #import <RestKit/RestKit.h>
 
+#import "Place.h"
+
 @implementation MappingProvider
 
 + (RKObjectMapping *) placeMapping {
-    RKEntityMapping *placeMapping = [RKEntityMapping mappingForEntityForName:@"Place" inManagedObjectStore:managedObjectStore];
-    placeMapping.identificationAttributes = @[ @"name" ];
+    RKObjectMapping *placeMapping = [RKObjectMapping mappingForClass:[Place class]];
+//    placeMapping.identificationAttributes = @[ @"name" ];
     [placeMapping addAttributeMappingsFromDictionary:
      @{
-       @"id": @"id",
+       @"id": @"ID",
        @"name": @"name",
        @"latitude": @"latitude",
        @"longitude": @"longitude",
@@ -33,17 +35,23 @@
     return placeMapping;
 }
 
-+ (RKObjectMapping *) placeListMapping {
-    RKEntityMapping *placeListMapping = [RKEntityMapping mappingForEntityForName:@"PlaceList" inManagedObjectStore:managedObjectStore];
-    placeListMapping.identificationAttributes = @[ @"category" ];
-    [placeListMapping addAttributeMappingsFromDictionary:
-     @{
-       @"category": @"category"
-       }
-     ];
-    
-    return placeListMapping;
-}
+//+ (RKObjectMapping *) placeListMapping {
+//    RKEntityMapping *placeListMapping = [RKEntityMapping mappingForEntityForName:@"PlaceList" inManagedObjectStore:[RKManagedObjectStore defaultStore]];
+//    placeListMapping.identificationAttributes = @[ @"category" ];
+//    [placeListMapping addAttributeMappingsFromDictionary:
+//     @{
+//       @"category": @"category"
+//       }
+//     ];
+//    
+////     Mapping 'businesses' array to PlaceList object relationship 'places'
+//    [placeListMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"places"
+//                                                                                      toKeyPath:@"places"
+//                                                                                    withMapping:[self placeMapping]]
+//     ];
+//    
+//    return placeListMapping;
+//}
 
 + (RKObjectMapping *) mediaMapping {
     //    RKEntityMapping *tweetMapping = [RKEntityMapping mappingForEntityForName:@"Tweet" inManagedObjectStore:managedObjectStore];
@@ -56,18 +64,11 @@
     //instagramMapping.identificationAttributes = @[ @"" ];
     // ********** need to figure out if we need identification attribute for instagrams
     //    [instagramMapping addAttributeMappingsFromArray: @[ @"createdAt", @"imageURL", @"username", @"profileImageURL", @"caption", @"type", @"width", @"height" ]];
-    
-    // ----- RELATIONSHIP MAPPING -----
-    
-    // Mapping 'businesses' array to PlaceList object relationship 'places'
-    //    [placeListMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"places"
-    //                                                                                      toKeyPath:@"places"
-    //                                                                                    withMapping:placeMapping]
-    //     ];
+    return nil;
 }
 
 + (RKObjectMapping *) mediaListMapping {
-    
+    return nil;
 }
 
 @end

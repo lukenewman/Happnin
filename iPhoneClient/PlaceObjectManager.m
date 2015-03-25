@@ -7,6 +7,8 @@
 //
 
 #import "PlaceObjectManager.h"
+#import "MappingProvider.h"
+#import "RKManagedObjectStore.h"
 
 @implementation PlaceObjectManager
 
@@ -17,6 +19,8 @@
         sharedManager = [super sharedManager];
     });
     
+//    sharedManager.managedObjectStore = [RKManagedObjectStore defaultStore];
+    
     return sharedManager;
 }
 
@@ -25,8 +29,17 @@
 }
 
 - (void) setupResponseDescriptors; {
-    // put response descriptors here
-    //    [objectManager addResponseDescriptor:placeListResponseDescriptor];
+    [super setupResponseDescriptors];
+    
+    RKResponseDescriptor *placeListResponseDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider placeMapping]
+                                                 method:RKRequestMethodGET
+                                            pathPattern:@"/places"
+                                                keyPath:@"businesses"
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)
+     ];
+
+    [self addResponseDescriptor:placeListResponseDescriptor];
 }
 
 @end

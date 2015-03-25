@@ -7,11 +7,8 @@
 //
 
 #import "PlaceListTableViewController.h"
-
-#import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
 
-#import "PlaceList.h"
 #import "Place.h"
 
 @interface PlaceListTableViewController ()
@@ -46,7 +43,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlaceCell" forIndexPath:indexPath];
 
     Place *place = self.venues[indexPath.row];
     cell.textLabel.text = place.name;
@@ -57,7 +54,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 #pragma mark - RESTKit
@@ -75,28 +72,13 @@
     [[RKObjectManager sharedManager] getObjectsAtPath:@"/places"
                                            parameters:parameters
      success: ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-         //places have been saved in core data by now
-         [self fetchPlacesFromContext];
+         self.venues = mappingResult.array;
+         [self.tableView reloadData];
      }
      failure: ^(RKObjectRequestOperation *operation, NSError *error) {
          RKLogError(@"Load failed with error: %@", error);
      }
      ];
-}
-
-- (void)fetchPlacesFromContext {
-    NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"PlaceList"];
-    
-    NSError *error = nil;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    
-    PlaceList *placeList = [fetchedObjects firstObject];
-    
-    NSLog(@"placeList category: %@", placeList.category);
-    NSLog(@"placeList places: %@", placeList.places);
-    
-    [self.tableView reloadData];
 }
 
 @end

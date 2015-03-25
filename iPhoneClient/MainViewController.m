@@ -7,10 +7,11 @@
 //
 
 #import "MainViewController.h"
-
 #import <QuartzCore/QuartzCore.h>
+#import <RestKit/RestKit.h>
 
 #import "PlaceListTableViewController.h"
+#import "MappingProvider.h"
 
 @interface MainViewController ()
 
@@ -25,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self configureRestKit];
     
     [self.barsButton.layer setBorderWidth:1.0f];
     [self.barsButton.layer setBorderColor:[UIColor whiteColor].CGColor];
@@ -61,6 +64,31 @@
         destViewController.navigationItem.title = @"Cafes";
         [destViewController loadVenuesWithSection:@"cafes"];
     }
+}
+
+#pragma mark - RestKit
+
+- (void)configureRestKit {
+    // initialize AFNetworking HTTPClient
+    NSURL *baseURL = [NSURL URLWithString:@"http://agile-tor-1071.herokuapp.com"];
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    
+    // initialize RestKit
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient: httpClient];
+    
+    // setup object mappings
+    [MappingProvider placeMapping];
+    
+    // register mappings with the provider using a response descriptor
+    RKResponseDescriptor *placeListResponseDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider placeMapping]
+                                                 method:RKRequestMethodGET
+                                            pathPattern:@"/places"
+                                                keyPath:@"businesses"
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)
+     ];
+    
+    [objectManager addResponseDescriptor:placeListResponseDescriptor];
 }
 
 @end

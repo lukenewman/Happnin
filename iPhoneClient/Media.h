@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
+@interface Media : NSObject
 
-@interface Media : NSManagedObject
-
-@property (nonatomic, retain) NSString * type;
+@property (nonatomic, strong) NSString * type;
 
 @end

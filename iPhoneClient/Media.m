@@ -8,9 +8,6 @@
 
 #import "Media.h"
 
-
 @implementation Media
-
-@dynamic type;
 
 @end

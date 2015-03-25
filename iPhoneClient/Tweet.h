@@ -7,15 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 #import "Media.h"
-
 
 @interface Tweet : Media
 
-@property (nonatomic, retain) NSDate * createdAt;
-@property (nonatomic, retain) NSString * text;
-@property (nonatomic, retain) NSString * username;
-@property (nonatomic, retain) NSString * profileImageURL;
+@property (nonatomic, strong) NSDate * createdAt;
+@property (nonatomic, strong) NSString * text;
+@property (nonatomic, strong) NSString * username;
+@property (nonatomic, strong) NSString * profileImageURL;
 
 @end

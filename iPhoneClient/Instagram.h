@@ -7,19 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 #import "Media.h"
-
 
 @interface Instagram : Media
 
-@property (nonatomic, retain) NSDate * createdAt;
-@property (nonatomic, retain) NSString * imageURL;
-@property (nonatomic, retain) NSString * username;
-@property (nonatomic, retain) NSString * profileImageURL;
-@property (nonatomic, retain) NSString * caption;
-@property (nonatomic, retain) NSNumber * width;
-@property (nonatomic, retain) NSNumber * height;
-@property (nonatomic, retain) NSString * typeOfMedia;
+@property (nonatomic, strong) NSDate * createdAt;
+@property (nonatomic, strong) NSString * imageURL;
+@property (nonatomic, strong) NSString * username;
+@property (nonatomic, strong) NSString * profileImageURL;
+@property (nonatomic, strong) NSString * caption;
+@property (nonatomic, strong) NSNumber * width;
+@property (nonatomic, strong) NSNumber * height;
+@property (nonatomic, strong) NSString * typeOfMedia;
 
 @end

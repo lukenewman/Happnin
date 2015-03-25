@@ -13,7 +13,7 @@
 @interface MappingProvider : NSObject
 
 + (RKObjectMapping *) placeMapping;
-+ (RKObjectMapping *) placeListMapping;
+//+ (RKObjectMapping *) placeListMapping;
 + (RKObjectMapping *) mediaMapping;
 + (RKObjectMapping *) mediaListMapping;
 

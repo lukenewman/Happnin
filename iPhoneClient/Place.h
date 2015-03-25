@@ -7,19 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
-@class Media;
+@interface Place : NSObject
 
-@interface Place : NSManagedObject
-
-@property (nonatomic, retain) NSNumber * isClosed;
-@property (nonatomic, retain) NSNumber * latitude;
-@property (nonatomic, retain) NSNumber * longitude;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * imageURL;
-@property (nonatomic, retain) NSString * identification;
-@property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) NSString * phoneNumber;
+@property (nonatomic, strong) NSNumber * isClosed;
+@property (nonatomic, strong) NSNumber * latitude;
+@property (nonatomic, strong) NSNumber * longitude;
+@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSString * imageURL;
+@property (nonatomic, strong) NSString * address;
+@property (nonatomic, strong) NSString * phoneNumber;
+@property (nonatomic, strong) NSNumber * rating;
+@property (nonatomic, strong) NSString * ID;
+@property (nonatomic, strong) NSNumber * distance;
+@property (nonatomic, strong) NSNumber * featuredValue;
 
 @end
