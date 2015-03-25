@@ -59,7 +59,7 @@
         [destViewController loadVenuesWithSection:@"bars"];
     } else if ([[segue identifier] isEqualToString:@"showClubs"]) {
         destViewController.navigationItem.title = @"Clubs";
-        [destViewController loadVenuesWithSection:@"clubs"];
+        [destViewController loadVenuesWithSection:@"danceclubs"];
     } else if ([[segue identifier] isEqualToString:@"showCafes"]) {
         destViewController.navigationItem.title = @"Cafes";
         [destViewController loadVenuesWithSection:@"cafes"];

@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 
 #import "Place.h"
+#import "PlaceCell.h"
 
 @interface PlaceListTableViewController ()
 
@@ -43,18 +44,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlaceCell" forIndexPath:indexPath];
+    PlaceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlaceCell" forIndexPath:indexPath];
 
     Place *place = self.venues[indexPath.row];
-    cell.textLabel.text = place.name;
-    cell.detailTextLabel.text = place.phoneNumber;
+    cell.nameLabel.text = place.name;
+    cell.placeImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:place.imageURL]]];
     
     return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return NO;
 }
 
 #pragma mark - RESTKit
