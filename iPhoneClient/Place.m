@@ -20,6 +20,5 @@
 @dynamic identification;
 @dynamic address;
 @dynamic phoneNumber;
-@dynamic mediaList;
 
 @end

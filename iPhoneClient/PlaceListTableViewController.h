@@ -10,7 +10,6 @@
 
 @interface PlaceListTableViewController : UITableViewController
 
-- (void)requestDataWithSection:(NSString *)section;
+- (void)loadVenuesWithSection:(NSString *)section;
 
 @end
-

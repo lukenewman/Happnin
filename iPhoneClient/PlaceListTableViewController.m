@@ -16,7 +16,7 @@
 
 @interface PlaceListTableViewController ()
 
-@property NSArray *venues;
+@property (nonatomic, strong) NSArray *venues;
 
 @end
 
@@ -50,6 +50,8 @@
 
     Place *place = self.venues[indexPath.row];
     cell.textLabel.text = place.name;
+    cell.detailTextLabel.text = place.phoneNumber;
+    
     return cell;
 }
 
@@ -60,7 +62,7 @@
 
 #pragma mark - RESTKit
 
-- (void)requestDataWithSection:(NSString *)section {
+- (void)loadVenuesWithSection:(NSString *)section {
     
     NSLog(@"requesting data with section: %@", section);
     

@@ -21,6 +21,5 @@
 @property (nonatomic, retain) NSString * identification;
 @property (nonatomic, retain) NSString * address;
 @property (nonatomic, retain) NSString * phoneNumber;
-@property (nonatomic, retain) Media *mediaList;
 
 @end
