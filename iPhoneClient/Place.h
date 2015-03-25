@@ -10,7 +10,7 @@
 
 @interface Place : NSObject
 
-@property (nonatomic, strong) NSNumber * isClosed;
+@property BOOL isClosed;
 @property (nonatomic, strong) NSNumber * latitude;
 @property (nonatomic, strong) NSNumber * longitude;
 @property (nonatomic, strong) NSString * name;

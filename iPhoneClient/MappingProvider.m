@@ -15,7 +15,6 @@
 
 + (RKObjectMapping *) placeMapping {
     RKObjectMapping *placeMapping = [RKObjectMapping mappingForClass:[Place class]];
-//    placeMapping.identificationAttributes = @[ @"name" ];
     [placeMapping addAttributeMappingsFromDictionary:
      @{
        @"id": @"ID",
@@ -35,24 +34,6 @@
     return placeMapping;
 }
 
-//+ (RKObjectMapping *) placeListMapping {
-//    RKEntityMapping *placeListMapping = [RKEntityMapping mappingForEntityForName:@"PlaceList" inManagedObjectStore:[RKManagedObjectStore defaultStore]];
-//    placeListMapping.identificationAttributes = @[ @"category" ];
-//    [placeListMapping addAttributeMappingsFromDictionary:
-//     @{
-//       @"category": @"category"
-//       }
-//     ];
-//    
-////     Mapping 'businesses' array to PlaceList object relationship 'places'
-//    [placeListMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"places"
-//                                                                                      toKeyPath:@"places"
-//                                                                                    withMapping:[self placeMapping]]
-//     ];
-//    
-//    return placeListMapping;
-//}
-
 + (RKObjectMapping *) mediaMapping {
     //    RKEntityMapping *tweetMapping = [RKEntityMapping mappingForEntityForName:@"Tweet" inManagedObjectStore:managedObjectStore];
     //tweetMapping.identificationAttributes = @[ @"" ];
@@ -64,10 +45,6 @@
     //instagramMapping.identificationAttributes = @[ @"" ];
     // ********** need to figure out if we need identification attribute for instagrams
     //    [instagramMapping addAttributeMappingsFromArray: @[ @"createdAt", @"imageURL", @"username", @"profileImageURL", @"caption", @"type", @"width", @"height" ]];
-    return nil;
-}
-
-+ (RKObjectMapping *) mediaListMapping {
     return nil;
 }
 

@@ -12,5 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *placeImage;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *isClosedLabel;
+@property (nonatomic, weak) IBOutlet UILabel *addressLabel;
 
 @end

@@ -29,6 +29,10 @@
     
     [self configureRestKit];
     
+//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:103 green:58 blue:183 alpha:0.5];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    self.navigationController.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName:[UIColor whiteColor] };
+    
     [self.barsButton.layer setBorderWidth:1.0f];
     [self.barsButton.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self.barsButton.layer setCornerRadius:10.0f];
@@ -77,7 +81,7 @@
     RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient: httpClient];
     
     // setup object mappings
-    [MappingProvider placeMapping];
+    // MappingProvider does this right now
     
     // register mappings with the provider using a response descriptor
     RKResponseDescriptor *placeListResponseDescriptor =

@@ -20,19 +20,6 @@
 
 @implementation PlaceListTableViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // here's where to set the navigation bar color (hint: this doesn't work yet)
-//    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-//    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:103 green:58 blue:183 alpha:1];
-//    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:103 green:58 blue:183 alpha:1];
-}
-
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -49,6 +36,12 @@
     Place *place = self.venues[indexPath.row];
     cell.nameLabel.text = place.name;
     cell.placeImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:place.imageURL]]];
+    if (place.isClosed) {
+        cell.isClosedLabel.text = @"Closed";
+    } else {
+        cell.isClosedLabel.text = @"Open now";
+    }
+    cell.addressLabel.text = place.address;
     
     return cell;
 }
@@ -56,9 +49,6 @@
 #pragma mark - RESTKit
 
 - (void)loadVenuesWithSection:(NSString *)section {
-    
-    NSLog(@"requesting data with section: %@", section);
-    
     NSDictionary *parameters = @{
                                  @"loc": @"33.782139,-84.382166",
                                  @"radius": @"1500",
