@@ -10,6 +10,9 @@
 #import <RestKit/RestKit.h>
 
 #import "Place.h"
+#import "Media.h"
+#import "Tweet.h"
+#import "Instagram.h"
 
 @implementation MappingProvider
 
@@ -35,17 +38,24 @@
 }
 
 + (RKObjectMapping *) mediaMapping {
-    //    RKEntityMapping *tweetMapping = [RKEntityMapping mappingForEntityForName:@"Tweet" inManagedObjectStore:managedObjectStore];
-    //tweetMapping.identificationAttributes = @[ @"" ];
-    // ********** need to figure out if we need identification attribute for tweets
-    //    [tweetMapping addAttributeMappingsFromArray: @[ @"createdAt", @"text", @"username", @"profileImageURL"]];
+    RKObjectMapping *instagramMapping = [RKObjectMapping mappingForClass:[Instagram class]];
+    [instagramMapping addAttributeMappingsFromDictionary: @{ @"mediaType": @"type" }];
     
-    // '/medias'
-    //    RKEntityMapping *instagramMapping = [RKEntityMapping mappingForEntityForName:@"Instagram" inManagedObjectStore:managedObjectStore];
-    //instagramMapping.identificationAttributes = @[ @"" ];
-    // ********** need to figure out if we need identification attribute for instagrams
-    //    [instagramMapping addAttributeMappingsFromArray: @[ @"createdAt", @"imageURL", @"username", @"profileImageURL", @"caption", @"type", @"width", @"height" ]];
     return nil;
+}
+
++ (RKObjectMapping *) tweetMapping {
+    RKObjectMapping *tweetMapping = [RKObjectMapping mappingForClass:[Tweet class]];
+    [tweetMapping addAttributeMappingsFromArray: @[ @"createdAt", @"text", @"username", @"profileImageURL"]];
+    
+    return tweetMapping;
+}
+
++ (RKObjectMapping *) instagramMapping {
+    RKObjectMapping *instagramMapping = [RKObjectMapping mappingForClass:[Instagram class]];
+    [instagramMapping addAttributeMappingsFromArray: @[ @"createdAt", @"imageURL", @"username", @"profileImageURL", @"caption", @"type", @"width", @"height" ]];
+    
+    return instagramMapping;
 }
 
 @end

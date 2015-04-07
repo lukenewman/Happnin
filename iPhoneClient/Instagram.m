@@ -10,4 +10,13 @@
 
 @implementation Instagram
 
+- (BOOL)validateType:(id *)ioValue error:(NSError **)outError {
+    NSLog(@"validating Instagram type");
+    if ([(NSString *)*ioValue isEqualToString:@"Instagram"]) {
+        NSLog(@"%@ is equal to Instagram", [(Instagram *)*ioValue type]);
+        return YES;
+    }
+    return NO;
+}
+
 @end

@@ -11,6 +11,7 @@
 
 #import "Place.h"
 #import "PlaceCell.h"
+#import "PlaceDetailViewController.h"
 
 @interface PlaceListTableViewController ()
 
@@ -46,12 +47,24 @@
     return cell;
 }
 
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PlaceDetailViewController *destViewController = (PlaceDetailViewController *)[segue destinationViewController];
+    
+    if ([[segue identifier] isEqualToString:@"showPlaceDetail"]) {
+        NSIndexPath *selectedPlaceIndex = [self.tableView indexPathForSelectedRow];
+        NSLog(@"self.venues[selectedPlaceIndex.row] = %@", self.venues[selectedPlaceIndex.row]);
+        destViewController.place = self.venues[selectedPlaceIndex.row];
+        [destViewController loadMedia];
+    }
+}
+
 #pragma mark - RESTKit
 
 - (void)loadVenuesWithSection:(NSString *)section {
     NSDictionary *parameters = @{
                                  @"loc": @"33.782139,-84.382166",
-                                 @"radius": @"1500",
                                  @"section": section
                                  };
     

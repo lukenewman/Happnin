@@ -10,4 +10,13 @@
 
 @implementation Tweet
 
+- (BOOL)validateType:(id *)ioValue error:(NSError **)outError {
+    NSLog(@"validating Tweet type");
+    if ([(NSString *)*ioValue isEqualToString:@"Tweet"]) {
+        NSLog(@"%@ is equal to Tweet", [(Tweet *)*ioValue type]);
+        return YES;
+    }
+    return NO;
+}
+
 @end

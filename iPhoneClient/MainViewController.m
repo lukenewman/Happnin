@@ -19,35 +19,57 @@
 @property (weak, nonatomic) IBOutlet UIButton *restaurantsButton;
 @property (weak, nonatomic) IBOutlet UIButton *clubsButton;
 @property (weak, nonatomic) IBOutlet UIButton *cafesButton;
+@property (strong, nonatomic) UIColor *mainPurpleColor;
 
 @end
 
 @implementation MainViewController
+
+- (UIColor *)mainPurpleColor {
+    if (!_mainPurpleColor) {
+        _mainPurpleColor = [UIColor colorWithRed:103.0/255.0 green:58.0/255.0 blue:183.0/255.0 alpha:1.0f];
+    }
+    return _mainPurpleColor;
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self configureRestKit];
     
-//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:103 green:58 blue:183 alpha:0.5];
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//    self.navigationController.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName:[UIColor whiteColor] };
+    self.navigationItem.title = @"Happnin";
+    
+    self.navigationController.hidesBarsOnSwipe = NO;
+    self.navigationController.hidesBarsWhenKeyboardAppears = YES;
     
     [self.barsButton.layer setBorderWidth:1.0f];
-    [self.barsButton.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.barsButton.layer setBorderColor:self.mainPurpleColor.CGColor];
     [self.barsButton.layer setCornerRadius:10.0f];
     
     [self.restaurantsButton.layer setBorderWidth:1.0f];
-    [self.restaurantsButton.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.restaurantsButton.layer setBorderColor:self.mainPurpleColor.CGColor];
     [self.restaurantsButton.layer setCornerRadius:10.0f];
     
     [self.clubsButton.layer setBorderWidth:1.0f];
-    [self.clubsButton.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.clubsButton.layer setBorderColor:self.mainPurpleColor.CGColor];
     [self.clubsButton.layer setCornerRadius:10.0f];
     
     [self.cafesButton.layer setBorderWidth:1.0f];
-    [self.cafesButton.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.cafesButton.layer setBorderColor:self.mainPurpleColor.CGColor];
     [self.cafesButton.layer setCornerRadius:10.0f];
+}
+
+- (IBAction)searchLocationButtonTapped:(id)sender {
+    // animate some sort of search bar across the navigation bar
+    // the user will enter in a location
+    // somehow handle getting the keyboard out of the way
+    // when a section button is tapped, take the string out of the
+    //   search bar and use that as the search location
 }
 
 #pragma mark - Segues
@@ -92,7 +114,26 @@
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)
      ];
     
+    RKResponseDescriptor *instagramResponseDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider instagramMapping]
+                                                 method:RKRequestMethodGET
+                                            pathPattern:@"/medias"
+                                                keyPath:@"data"
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *tweetResponseDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider tweetMapping]
+                                                 method:RKRequestMethodGET
+                                            pathPattern:@"/medias"
+                                                keyPath:@"data"
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
     [objectManager addResponseDescriptor:placeListResponseDescriptor];
+    [objectManager addResponseDescriptor:instagramResponseDescriptor];
+    [objectManager addResponseDescriptor:tweetResponseDescriptor];
+    
+    // enable the activity indicator in the top bar
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 }
 
 @end
