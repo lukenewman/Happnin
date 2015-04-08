@@ -7,11 +7,11 @@
 //
 
 #import "PlaceListTableViewController.h"
+#import <QuartzCore/QuartzCore.h>
 #import <RestKit/RestKit.h>
-
 #import "Place.h"
 #import "PlaceCell.h"
-#import "PlaceDetailViewController.h"
+#import "PlaceDetailTableViewController.h"
 
 @interface PlaceListTableViewController ()
 
@@ -33,16 +33,32 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PlaceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlaceCell" forIndexPath:indexPath];
-
     Place *place = self.venues[indexPath.row];
+    
+    // name
     cell.nameLabel.text = place.name;
-    cell.placeImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:place.imageURL]]];
+    
+    // image
+    CALayer *imageLayer = cell.placeImage.layer;
+    [imageLayer setCornerRadius:cell.placeImage.frame.size.width / 2];
+    [imageLayer setBorderWidth:1];
+    [imageLayer setMasksToBounds:YES];
+    cell.placeImage.image = [UIImage imageWithData:place.imageData];
+    
+    // is it closed?
     if (place.isClosed) {
         cell.isClosedLabel.text = @"Closed";
     } else {
         cell.isClosedLabel.text = @"Open now";
     }
-    cell.addressLabel.text = place.address;
+    
+    // display street address only
+    NSMutableString *displayAddress = [[NSMutableString alloc] init];
+    [displayAddress appendString:place.addressArray[0]];
+    if (place.addressArray.count > 3) {
+        [displayAddress appendFormat:@", %@", place.addressArray[1]];
+    }
+    cell.addressLabel.text = displayAddress;
     
     return cell;
 }
@@ -50,11 +66,10 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PlaceDetailViewController *destViewController = (PlaceDetailViewController *)[segue destinationViewController];
+    PlaceDetailTableViewController *destViewController = (PlaceDetailTableViewController *)[segue destinationViewController];
     
     if ([[segue identifier] isEqualToString:@"showPlaceDetail"]) {
         NSIndexPath *selectedPlaceIndex = [self.tableView indexPathForSelectedRow];
-        NSLog(@"self.venues[selectedPlaceIndex.row] = %@", self.venues[selectedPlaceIndex.row]);
         destViewController.place = self.venues[selectedPlaceIndex.row];
         [destViewController loadMedia];
     }

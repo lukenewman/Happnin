@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Place.h"
 
-@interface PlaceDetailViewController : UIViewController
+@interface PlaceDetailTableViewController : UITableViewController
 
 @property Place *place;
 

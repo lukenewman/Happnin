@@ -10,7 +10,6 @@
 #import <RestKit/RestKit.h>
 
 #import "Place.h"
-#import "Media.h"
 #import "Tweet.h"
 #import "Instagram.h"
 
@@ -29,7 +28,7 @@
        @"isClosed": @"isClosed",
        @"distance": @"distance",
        @"rating": @"rating",
-       @"address": @"address",
+       @"address": @"addressArray",
        @"featuredValue": @"featuredValue"
        }
      ];
@@ -37,23 +36,36 @@
     return placeMapping;
 }
 
-+ (RKObjectMapping *) mediaMapping {
-    RKObjectMapping *instagramMapping = [RKObjectMapping mappingForClass:[Instagram class]];
-    [instagramMapping addAttributeMappingsFromDictionary: @{ @"mediaType": @"type" }];
-    
-    return nil;
-}
-
 + (RKObjectMapping *) tweetMapping {
     RKObjectMapping *tweetMapping = [RKObjectMapping mappingForClass:[Tweet class]];
-    [tweetMapping addAttributeMappingsFromArray: @[ @"createdAt", @"text", @"username", @"profileImageURL"]];
+    [tweetMapping addAttributeMappingsFromDictionary:
+     @{
+       @"mediaType": @"type",
+       @"createdAt": @"createdAt",
+       @"text": @"text",
+       @"username": @"username",
+       @"profileImageURL": @"profileImageURL"
+       }
+     ];
     
     return tweetMapping;
 }
 
 + (RKObjectMapping *) instagramMapping {
     RKObjectMapping *instagramMapping = [RKObjectMapping mappingForClass:[Instagram class]];
-    [instagramMapping addAttributeMappingsFromArray: @[ @"createdAt", @"imageURL", @"username", @"profileImageURL", @"caption", @"type", @"width", @"height" ]];
+    [instagramMapping addAttributeMappingsFromDictionary:
+     @{
+       @"mediaType": @"type",
+       @"type": @"typeOfMedia",
+       @"createdAt": @"createdAt",
+       @"imageURL": @"imageURL",
+       @"username": @"username",
+       @"profileImageURL": @"profileImageURL",
+       @"caption": @"caption",
+       @"width": @"width",
+       @"height": @"height"
+       }
+     ];
     
     return instagramMapping;
 }

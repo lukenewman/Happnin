@@ -9,14 +9,16 @@
 #import "Instagram.h"
 
 @implementation Instagram
-
-- (BOOL)validateType:(id *)ioValue error:(NSError **)outError {
-    NSLog(@"validating Instagram type");
-    if ([(NSString *)*ioValue isEqualToString:@"Instagram"]) {
-        NSLog(@"%@ is equal to Instagram", [(Instagram *)*ioValue type]);
-        return YES;
-    }
-    return NO;
-}
+//
+//- (BOOL)validateType:(id *)ioValue error:(NSError **)outError {
+//    NSString *type = *ioValue;
+//    NSLog(@"INSTAGRAM: attempting to map an object of type %@", type);
+//    if ([type isEqualToString:@"Instagram"]) {
+//        NSLog(@"     success");
+//        return YES;
+//    }
+//    NSLog(@"     failure");
+//    return NO;
+//}
 
 @end

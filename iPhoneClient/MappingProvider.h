@@ -13,7 +13,6 @@
 @interface MappingProvider : NSObject
 
 + (RKObjectMapping *)placeMapping;
-+ (RKObjectMapping *)mediaMapping;
 + (RKObjectMapping *)tweetMapping;
 + (RKObjectMapping *)instagramMapping;
 
