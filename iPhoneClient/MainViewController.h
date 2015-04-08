@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface MainViewController : UIViewController <CLLocationManagerDelegate, UISearchBarDelegate> {
+@interface MainViewController : UIViewController <CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
 }
 

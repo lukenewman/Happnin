@@ -20,11 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *restaurantsButton;
 @property (weak, nonatomic) IBOutlet UIButton *clubsButton;
 @property (weak, nonatomic) IBOutlet UIButton *cafesButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButtonOutlet;
-
-@property (nonatomic, strong) UIButton *searchButton;
-@property (nonatomic, strong) UIBarButtonItem *searchItem;
-@property (nonatomic, strong) UISearchBar *searchBar;
 
 @property (strong, nonatomic) UIColor *mainPurpleColor;
 @property CLLocation *currentLocation;
@@ -40,24 +35,13 @@
     return _mainPurpleColor;
 }
 
-//-(UIStatusBarStyle)preferredStatusBarStyle
-//{
-//    return UIStatusBarStyleLightContent;
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self configureRestKit];
-    
     [self configureLocationManager];
     
-    [self configureSearch];
-    
     self.navigationItem.title = @"Happnin";
-    
-    self.navigationController.hidesBarsOnSwipe = NO;
-    self.navigationController.hidesBarsWhenKeyboardAppears = YES;
     
     [self.barsButton.layer setBorderWidth:1.0f];
     [self.barsButton.layer setBorderColor:self.mainPurpleColor.CGColor];
@@ -76,7 +60,8 @@
     [self.cafesButton.layer setCornerRadius:10.0f];
 }
 
-//- (IBAction)searchLocationButtonTapped:(id)sender {
+//- (IBAction)searchButtonTapped:(id)sender {
+//    NSLog(@"search button tapped");
 //    // animate some sort of search bar across the navigation bar
 //    // the user will enter in a location
 //    // somehow handle getting the keyboard out of the way
@@ -124,64 +109,6 @@
     [self.navigationItem setBackBarButtonItem: backButton];
 }
 
-#pragma mark - Search Functionality
-
-- (void)configureSearch {
-    // create the magnifying glass button
-    self.searchButton = [[UIButton alloc] init];
-    // add button images, etc.
-    [_searchButton addTarget:self action:@selector(searchButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-
-//    self.searchButtonOutlet.target = self;
-//    self.searchButtonOutlet.action = @selector(searchButtonTapped:);
-    
-    self.searchItem = [[UIBarButtonItem alloc] initWithCustomView:_searchButton];
-    self.navigationItem.rightBarButtonItem = _searchItem;
-
-    self.searchBar = [[UISearchBar alloc] init];
-    _searchBar.showsCancelButton = YES;
-    _searchBar.delegate = self;
-}
-
-- (void)searchButtonTapped:(id)sender {
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        _searchButton.alpha = 0.0f;
-        
-    } completion:^(BOOL finished) {
-        
-        // remove the search button
-        self.navigationItem.rightBarButtonItem = nil;
-        // add the search bar (which will start out hidden).
-        self.navigationItem.titleView = _searchBar;
-        _searchBar.alpha = 0.0;
-        
-        [UIView animateWithDuration:0.5
-                         animations:^{
-                             _searchBar.alpha = 1.0;
-                         } completion:^(BOOL finished) {
-                             [_searchBar becomeFirstResponder];
-                         }];
-        
-    }];
-}
-
-// UISearchBar delegate method
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    
-    [UIView animateWithDuration:0.5f animations:^{
-        _searchBar.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        self.navigationItem.titleView = nil;
-        self.navigationItem.rightBarButtonItem = _searchItem;
-        _searchButton.alpha = 0.0;  // set this *after* adding it back
-        [UIView animateWithDuration:0.5f animations:^ {
-            _searchButton.alpha = 1.0;
-        }];
-    }];
-    
-}// called when cancel button pressed
-
 #pragma mark - Location Manager
 
 - (void)configureLocationManager {
@@ -208,9 +135,6 @@
     // initialize RestKit
     RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient: httpClient];
     
-    // setup object mappings
-    // MappingProvider does this right now
-    
     // register mappings with the provider using a response descriptor
     RKResponseDescriptor *placeListResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider placeMapping]
@@ -219,20 +143,6 @@
                                                 keyPath:@"businesses"
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)
      ];
-    
-//    RKResponseDescriptor *tweetResponseDescriptor =
-//    [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider tweetMapping]
-//                                                 method:RKRequestMethodGET
-//                                            pathPattern:@"/medias"
-//                                                keyPath:@"data"
-//                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-//    
-//    RKResponseDescriptor *instagramResponseDescriptor =
-//    [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider instagramMapping]
-//                                                 method:RKRequestMethodGET
-//                                            pathPattern:@"/medias"
-//                                                keyPath:@"data"
-//                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     RKDynamicMapping *dynamicMapping = [RKDynamicMapping new];
     RKObjectMapping *instagramMapping = [MappingProvider instagramMapping];
@@ -246,8 +156,6 @@
                                                                                  pathPattern:@"/medias"
                                                                                      keyPath:@"data"
                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
-    //    [objectManager addResponseDescriptor:instagramResponseDescriptor];
-    //    [objectManager addResponseDescriptor:tweetResponseDescriptor];
     
     // enable the activity indicator in the top bar
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;

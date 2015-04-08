@@ -11,6 +11,10 @@
 		3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6731AC1B70A00E1E274 /* Tweet.m */; };
 		3F42D67A1AC1B70A00E1E274 /* Instagram.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6791AC1B70A00E1E274 /* Instagram.m */; };
 		3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D67C1AC1B70A00E1E274 /* Place.m */; };
+		3F4A4EF31AD55E3500BDE526 /* InstagramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A4EF21AD55E3500BDE526 /* InstagramCell.xib */; };
+		3F4A4EF61AD55F0900BDE526 /* InstagramTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A4EF51AD55F0900BDE526 /* InstagramTableViewCell.m */; };
+		3F4A4EF81AD563EB00BDE526 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */; };
+		3F4A4EFB1AD5644100BDE526 /* TweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */; };
 		3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C3571AB6312F00F1A898 /* MainViewController.m */; };
 		3F7182661A9FB78B0096BD52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182651A9FB78B0096BD52 /* main.m */; };
 		3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182681A9FB78B0096BD52 /* AppDelegate.m */; };
@@ -45,6 +49,12 @@
 		3F42D6791AC1B70A00E1E274 /* Instagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instagram.m; sourceTree = "<group>"; };
 		3F42D67B1AC1B70A00E1E274 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		3F42D67C1AC1B70A00E1E274 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		3F4A4EF21AD55E3500BDE526 /* InstagramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramCell.xib; sourceTree = "<group>"; };
+		3F4A4EF41AD55F0900BDE526 /* InstagramTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramTableViewCell.h; sourceTree = "<group>"; };
+		3F4A4EF51AD55F0900BDE526 /* InstagramTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramTableViewCell.m; sourceTree = "<group>"; };
+		3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		3F4A4EF91AD5644100BDE526 /* TweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTableViewCell.h; sourceTree = "<group>"; };
+		3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTableViewCell.m; sourceTree = "<group>"; };
 		3F55C3561AB6312F00F1A898 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3F55C3571AB6312F00F1A898 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3F7182601A9FB78B0096BD52 /* Happnin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happnin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +133,12 @@
 				3FD6F4411AC90C4C00BBAC93 /* PlaceDetailTableViewController.h */,
 				3FD6F4421AC90C4C00BBAC93 /* PlaceDetailTableViewController.m */,
 				3F7182701A9FB78B0096BD52 /* Main.storyboard */,
+				3F4A4EF21AD55E3500BDE526 /* InstagramCell.xib */,
+				3F4A4EF41AD55F0900BDE526 /* InstagramTableViewCell.h */,
+				3F4A4EF51AD55F0900BDE526 /* InstagramTableViewCell.m */,
+				3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */,
+				3F4A4EF91AD5644100BDE526 /* TweetTableViewCell.h */,
+				3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */,
 				3F765B6D1AC358A90042028C /* PlaceCell.h */,
 				3F765B6E1AC358A90042028C /* PlaceCell.m */,
 				3F7182731A9FB78B0096BD52 /* Images.xcassets */,
@@ -266,6 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4A4EF31AD55E3500BDE526 /* InstagramCell.xib in Resources */,
+				3F4A4EF81AD563EB00BDE526 /* TweetCell.xib in Resources */,
 				3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */,
 				3F7182771A9FB78B0096BD52 /* LaunchScreen.xib in Resources */,
 				3F7182741A9FB78B0096BD52 /* Images.xcassets in Resources */,
@@ -323,10 +341,12 @@
 				3FD6F4431AC90C4C00BBAC93 /* PlaceDetailTableViewController.m in Sources */,
 				3F42D6711AC1B70900E1E274 /* Media.m in Sources */,
 				3F765B6F1AC358A90042028C /* PlaceCell.m in Sources */,
+				3F4A4EF61AD55F0900BDE526 /* InstagramTableViewCell.m in Sources */,
 				3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */,
 				3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */,
 				3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */,
 				3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */,
+				3F4A4EFB1AD5644100BDE526 /* TweetTableViewCell.m in Sources */,
 				3F71826C1A9FB78B0096BD52 /* PlaceListTableViewController.m in Sources */,
 				3F7182661A9FB78B0096BD52 /* main.m in Sources */,
 				3F42D67A1AC1B70A00E1E274 /* Instagram.m in Sources */,
