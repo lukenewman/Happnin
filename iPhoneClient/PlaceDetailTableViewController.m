@@ -7,14 +7,16 @@
 //
 
 #import "PlaceDetailTableViewController.h"
-#import <MapKit/MapKit.h>
 #import <RestKit/RestKit.h>
+#import <MapKit/MapKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Media.h"
 #import "Instagram.h"
 #import "Tweet.h"
+#import "PlaceDetailTableViewCell.h"
 #import "InstagramTableViewCell.h"
 #import "TweetTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface PlaceDetailTableViewController ()
 
@@ -27,11 +29,19 @@
 
 @end
 
-@implementation PlaceDetailTableViewController 
+@implementation PlaceDetailTableViewController
+
+static NSString *PlaceDetailCellIdentifier = @"PlaceDetailCell";
+static NSString *InstagramCellIdentifier = @"InstagramCell";
+static NSString *TweetCellIdentifier = @"TweetCell";
 
 - (void)viewDidLoad {
-    self.navigationController.hidesBarsOnSwipe = NO;
+    self.navigationController.hidesBarsOnSwipe = YES;
     self.navigationItem.title = self.place.name;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"PlaceDetailCell" bundle:nil] forCellReuseIdentifier:PlaceDetailCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"InstagramCell" bundle:nil] forCellReuseIdentifier:InstagramCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:TweetCellIdentifier];
     
     // put this in cell for row at index path
 //    [self.callButton.layer setBorderWidth:1.0f];
@@ -51,7 +61,6 @@
 //    self.nameLabel.text = self.place.name;
 }
 
-    // open up Phone with the place's number entered
 - (IBAction)callPlace:(id)sender {
     NSString *phoneURL = [NSString stringWithFormat:@"tel://%@", self.place.phoneNumber];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneURL]];
@@ -75,47 +84,58 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    if (section == 0) {
-//        return 1;
-//    }
     return self.medias.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section == 0) {
-//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlaceDetailCell" forIndexPath:indexPath];
-//        
-//        // setup the Place detail cell
-//        
-//        return cell;
-//    }
-    // else
-    if ([((Media *)self.medias[indexPath.row]).type isEqualToString:@"Instagram"]) {
-        InstagramTableViewCell *cell = (InstagramTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"InstagramCell" forIndexPath:indexPath];
+    if (indexPath.row == 0) {
+        PlaceDetailTableViewCell *cell = (PlaceDetailTableViewCell *)[tableView dequeueReusableCellWithIdentifier:PlaceDetailCellIdentifier forIndexPath:indexPath];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PlaceDetailCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        // configure the place detail cell here
+        
+        return cell;
+    } else if ([((Media *)self.medias[indexPath.row - 1]).type isEqualToString:@"Instagram"]) {
+        InstagramTableViewCell *cell = (InstagramTableViewCell *)[tableView dequeueReusableCellWithIdentifier:InstagramCellIdentifier forIndexPath:indexPath];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"InstagramCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
         Instagram *post = (Instagram *)self.medias[indexPath.row];
         
-        // setup the Instagram media cell
-        NSURL *postImageURL = [NSURL URLWithString:post.imageURL];
-        NSData *postImageData = [NSData dataWithContentsOfURL:postImageURL];
-        cell.postImageView.image = [UIImage imageWithData:postImageData];
-        
-        NSURL *userImageURL = [NSURL URLWithString:post.profileImageURL];
-        NSData *userImageData = [NSData dataWithContentsOfURL:userImageURL];
-        cell.userImageView.image = [UIImage imageWithData:userImageData];
+        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:post.imageURL]
+                                 placeholderImage:[UIImage imageNamed:@""]];
         
         cell.usernameLabel.text = post.username;
         
         cell.timestampLabel.text = [post.createdAt description];
         
         return cell;
-    } else if ([((Media *)self.medias[indexPath.row]).type isEqualToString:@"Tweet"]) {
-        TweetTableViewCell *cell = (TweetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
+    } else if ([((Media *)self.medias[indexPath.row - 1]).type isEqualToString:@"Twitter"]) {
+        TweetTableViewCell *cell = (TweetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:TweetCellIdentifier forIndexPath:indexPath];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TweetCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
         Tweet *post = (Tweet *)self.medias[indexPath.row];
         
-        // setup the Tweet media cell
-        NSURL *profileImageURL = [NSURL URLWithString:post.profileImageURL];
-        NSData *profileImageData = [NSData dataWithContentsOfURL:profileImageURL];
-        cell.profileImageView.image = [UIImage imageWithData:profileImageData];
+        CALayer *imageLayer = cell.profileImageView.layer;
+        [imageLayer setCornerRadius:cell.profileImageView.frame.size.width / 2];
+        [imageLayer setBorderWidth:1];
+        [imageLayer setMasksToBounds:YES];
+        [cell.profileImageView sd_setImageWithURL:[NSURL URLWithString:post.profileImageURL]
+                                 placeholderImage:[UIImage imageNamed:@""]];
         
         cell.usernameLabel.text = post.username;
         
@@ -124,23 +144,28 @@
         return cell;
     } else {
         // some error -- not sure what to do in this case
+        NSLog(@"ERROR");
         return nil;
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Media *post = (Media *)self.medias[indexPath.row];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 200;
+    }
+    Media *post = (Media *)self.medias[indexPath.row - 1];
     if ([post.type isEqualToString:@"Instagram"]) {
         return 445;
     } else {
-        return 183;
+        return 76;
     }
 }
 
 #pragma mark - RestKit
 
 - (void)loadMedia {
+    NSLog(@"loading media");
+    
     NSString *locString = [NSString stringWithFormat:@"%@,%@", self.place.latitude, self.place.longitude];
     
     NSDictionary *parameters = @{
@@ -152,7 +177,7 @@
                                            parameters:parameters
                                               success: ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   self.medias = mappingResult.array;
-                                                  NSLog(@"self.medias: %@", self.medias);
+                                                  [self.tableView reloadData];
                                               }
                                               failure: ^(RKObjectRequestOperation *operation, NSError *error) {
                                                   RKLogError(@"Load failed with error: %@", error);

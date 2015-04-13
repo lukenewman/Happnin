@@ -10,8 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import <RestKit/RestKit.h>
 #import "Place.h"
-#import "PlaceCell.h"
+#import "PlaceTableViewCell.h"
 #import "PlaceDetailTableViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface PlaceListTableViewController ()
 
@@ -20,6 +21,13 @@
 @end
 
 @implementation PlaceListTableViewController
+
+static NSString *PlaceCellIdentifier = @"PlaceCell";
+
+- (void)viewDidLoad {
+//    [self.tableView registerClass:[PlaceTableViewCell class] forCellReuseIdentifier:PlaceCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"PlaceCell" bundle:nil] forCellReuseIdentifier:PlaceCellIdentifier];
+}
 
 #pragma mark - Table View
 
@@ -32,25 +40,23 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PlaceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlaceCell" forIndexPath:indexPath];
+    PlaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PlaceCellIdentifier forIndexPath:indexPath];
     Place *place = self.venues[indexPath.row];
     
     // name
     cell.nameLabel.text = place.name;
     
     // image
-    CALayer *imageLayer = cell.placeImage.layer;
-    [imageLayer setCornerRadius:cell.placeImage.frame.size.width / 2];
+    [cell.placeImageView sd_setImageWithURL:[NSURL URLWithString:place.imageURL]
+                           placeholderImage:[UIImage imageNamed:@"barbuttonicon"]];
+    CALayer *imageLayer = cell.placeImageView.layer;
+    [imageLayer setCornerRadius:cell.placeImageView.frame.size.width / 2];
     [imageLayer setBorderWidth:1];
     [imageLayer setMasksToBounds:YES];
-    cell.placeImage.image = [UIImage imageWithData:place.imageData];
     
-    // is it closed?
-    if (place.isClosed) {
-        cell.isClosedLabel.text = @"Closed";
-    } else {
-        cell.isClosedLabel.text = @"Open now";
-    }
+    // display rating
+    NSString *ratingString = [NSString stringWithFormat:@"⭐️%@", place.rating];
+    cell.ratingLabel.text = ratingString;
     
     // display street address only
     NSMutableString *displayAddress = [[NSMutableString alloc] init];
@@ -61,6 +67,19 @@
     cell.addressLabel.text = displayAddress;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 85;
+}
+
+- (void)imageDownloaded:(NSNotification *)notification{
+    NSLog(@"reloading data");
+    [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showPlaceDetail" sender:self.tableView];
 }
 
 #pragma mark - Segues

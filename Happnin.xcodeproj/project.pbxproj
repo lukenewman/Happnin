@@ -15,17 +15,20 @@
 		3F4A4EF61AD55F0900BDE526 /* InstagramTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A4EF51AD55F0900BDE526 /* InstagramTableViewCell.m */; };
 		3F4A4EF81AD563EB00BDE526 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */; };
 		3F4A4EFB1AD5644100BDE526 /* TweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */; };
+		3F4A4EFD1AD656F700BDE526 /* PlaceDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A4EFC1AD656F700BDE526 /* PlaceDetailCell.xib */; };
+		3F4A4F001AD6570600BDE526 /* PlaceDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A4EFF1AD6570600BDE526 /* PlaceDetailTableViewCell.m */; };
 		3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C3571AB6312F00F1A898 /* MainViewController.m */; };
+		3F60008C1ADAFBCE00E4E529 /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F60008B1ADAFBCE00E4E529 /* PlaceTableViewCell.m */; };
 		3F7182661A9FB78B0096BD52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182651A9FB78B0096BD52 /* main.m */; };
 		3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182681A9FB78B0096BD52 /* AppDelegate.m */; };
 		3F71826C1A9FB78B0096BD52 /* PlaceListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F71826B1A9FB78B0096BD52 /* PlaceListTableViewController.m */; };
 		3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182701A9FB78B0096BD52 /* Main.storyboard */; };
 		3F7182741A9FB78B0096BD52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182731A9FB78B0096BD52 /* Images.xcassets */; };
 		3F7182771A9FB78B0096BD52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182751A9FB78B0096BD52 /* LaunchScreen.xib */; };
-		3F7182831A9FB78B0096BD52 /* iPhoneClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182821A9FB78B0096BD52 /* iPhoneClientTests.m */; };
+		3F7182831A9FB78B0096BD52 /* HappninTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182821A9FB78B0096BD52 /* HappninTests.m */; };
 		3F765B661AC303970042028C /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F765B651AC303970042028C /* MappingProvider.m */; };
-		3F765B6F1AC358A90042028C /* PlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F765B6E1AC358A90042028C /* PlaceCell.m */; };
 		3FD6F4431AC90C4C00BBAC93 /* PlaceDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6F4421AC90C4C00BBAC93 /* PlaceDetailTableViewController.m */; };
+		3FE4F6E51ADAFA7700E394F7 /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE4F6E41ADAFA7700E394F7 /* PlaceCell.xib */; };
 		6783D71B8856D918112200F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 944350A05266297D57216CD2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +58,13 @@
 		3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
 		3F4A4EF91AD5644100BDE526 /* TweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTableViewCell.h; sourceTree = "<group>"; };
 		3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTableViewCell.m; sourceTree = "<group>"; };
+		3F4A4EFC1AD656F700BDE526 /* PlaceDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceDetailCell.xib; sourceTree = "<group>"; };
+		3F4A4EFE1AD6570600BDE526 /* PlaceDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailTableViewCell.h; sourceTree = "<group>"; };
+		3F4A4EFF1AD6570600BDE526 /* PlaceDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetailTableViewCell.m; sourceTree = "<group>"; };
 		3F55C3561AB6312F00F1A898 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3F55C3571AB6312F00F1A898 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3F60008A1ADAFBCE00E4E529 /* PlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
+		3F60008B1ADAFBCE00E4E529 /* PlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewCell.m; sourceTree = "<group>"; };
 		3F7182601A9FB78B0096BD52 /* Happnin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happnin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7182641A9FB78B0096BD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7182651A9FB78B0096BD52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,13 +77,12 @@
 		3F7182761A9FB78B0096BD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3F71827C1A9FB78B0096BD52 /* HappninTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappninTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7182811A9FB78B0096BD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F7182821A9FB78B0096BD52 /* iPhoneClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPhoneClientTests.m; sourceTree = "<group>"; };
+		3F7182821A9FB78B0096BD52 /* HappninTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappninTests.m; sourceTree = "<group>"; };
 		3F765B641AC303970042028C /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
 		3F765B651AC303970042028C /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
-		3F765B6D1AC358A90042028C /* PlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceCell.h; sourceTree = "<group>"; };
-		3F765B6E1AC358A90042028C /* PlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceCell.m; sourceTree = "<group>"; };
 		3FD6F4411AC90C4C00BBAC93 /* PlaceDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailTableViewController.h; sourceTree = "<group>"; };
 		3FD6F4421AC90C4C00BBAC93 /* PlaceDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetailTableViewController.m; sourceTree = "<group>"; };
+		3FE4F6E41ADAFA7700E394F7 /* PlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 		944350A05266297D57216CD2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B5072797799C9B7FC99FE8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +109,8 @@
 		3F7182571A9FB78B0096BD52 = {
 			isa = PBXGroup;
 			children = (
-				3F7182621A9FB78B0096BD52 /* iPhoneClient */,
-				3F71827F1A9FB78B0096BD52 /* iPhoneClientTests */,
+				3F7182621A9FB78B0096BD52 /* Happnin */,
+				3F71827F1A9FB78B0096BD52 /* HappninTests */,
 				3F7182611A9FB78B0096BD52 /* Products */,
 				547E763150DF66DAEAD8EA87 /* Pods */,
 				49C915BE827F1AEFEB41921E /* Frameworks */,
@@ -119,7 +126,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F7182621A9FB78B0096BD52 /* iPhoneClient */ = {
+		3F7182621A9FB78B0096BD52 /* Happnin */ = {
 			isa = PBXGroup;
 			children = (
 				3F7182671A9FB78B0096BD52 /* AppDelegate.h */,
@@ -133,14 +140,18 @@
 				3FD6F4411AC90C4C00BBAC93 /* PlaceDetailTableViewController.h */,
 				3FD6F4421AC90C4C00BBAC93 /* PlaceDetailTableViewController.m */,
 				3F7182701A9FB78B0096BD52 /* Main.storyboard */,
+				3FE4F6E41ADAFA7700E394F7 /* PlaceCell.xib */,
+				3F60008A1ADAFBCE00E4E529 /* PlaceTableViewCell.h */,
+				3F60008B1ADAFBCE00E4E529 /* PlaceTableViewCell.m */,
+				3F4A4EFC1AD656F700BDE526 /* PlaceDetailCell.xib */,
+				3F4A4EFE1AD6570600BDE526 /* PlaceDetailTableViewCell.h */,
+				3F4A4EFF1AD6570600BDE526 /* PlaceDetailTableViewCell.m */,
 				3F4A4EF21AD55E3500BDE526 /* InstagramCell.xib */,
 				3F4A4EF41AD55F0900BDE526 /* InstagramTableViewCell.h */,
 				3F4A4EF51AD55F0900BDE526 /* InstagramTableViewCell.m */,
 				3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */,
 				3F4A4EF91AD5644100BDE526 /* TweetTableViewCell.h */,
 				3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */,
-				3F765B6D1AC358A90042028C /* PlaceCell.h */,
-				3F765B6E1AC358A90042028C /* PlaceCell.m */,
 				3F7182731A9FB78B0096BD52 /* Images.xcassets */,
 				3F7182751A9FB78B0096BD52 /* LaunchScreen.xib */,
 				3F7182631A9FB78B0096BD52 /* Supporting Files */,
@@ -153,6 +164,7 @@
 				3F42D66F1AC1B70900E1E274 /* Media.h */,
 				3F42D6701AC1B70900E1E274 /* Media.m */,
 			);
+			name = Happnin;
 			path = iPhoneClient;
 			sourceTree = "<group>";
 		};
@@ -165,12 +177,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3F71827F1A9FB78B0096BD52 /* iPhoneClientTests */ = {
+		3F71827F1A9FB78B0096BD52 /* HappninTests */ = {
 			isa = PBXGroup;
 			children = (
-				3F7182821A9FB78B0096BD52 /* iPhoneClientTests.m */,
+				3F7182821A9FB78B0096BD52 /* HappninTests.m */,
 				3F7182801A9FB78B0096BD52 /* Supporting Files */,
 			);
+			name = HappninTests;
 			path = iPhoneClientTests;
 			sourceTree = "<group>";
 		};
@@ -286,6 +299,8 @@
 				3F4A4EF81AD563EB00BDE526 /* TweetCell.xib in Resources */,
 				3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */,
 				3F7182771A9FB78B0096BD52 /* LaunchScreen.xib in Resources */,
+				3FE4F6E51ADAFA7700E394F7 /* PlaceCell.xib in Resources */,
+				3F4A4EFD1AD656F700BDE526 /* PlaceDetailCell.xib in Resources */,
 				3F7182741A9FB78B0096BD52 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,10 +354,11 @@
 			files = (
 				3F765B661AC303970042028C /* MappingProvider.m in Sources */,
 				3FD6F4431AC90C4C00BBAC93 /* PlaceDetailTableViewController.m in Sources */,
+				3F60008C1ADAFBCE00E4E529 /* PlaceTableViewCell.m in Sources */,
 				3F42D6711AC1B70900E1E274 /* Media.m in Sources */,
-				3F765B6F1AC358A90042028C /* PlaceCell.m in Sources */,
 				3F4A4EF61AD55F0900BDE526 /* InstagramTableViewCell.m in Sources */,
 				3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */,
+				3F4A4F001AD6570600BDE526 /* PlaceDetailTableViewCell.m in Sources */,
 				3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */,
 				3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */,
 				3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */,
@@ -357,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F7182831A9FB78B0096BD52 /* iPhoneClientTests.m in Sources */,
+				3F7182831A9FB78B0096BD52 /* HappninTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

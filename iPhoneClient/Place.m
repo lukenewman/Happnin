@@ -10,6 +10,8 @@
 
 @implementation Place
 
+// TODO: maybe have a property with the JPG version of the image
+
 - (BOOL)validateAddressArray:(id *)ioValue error:(NSError **)outError {
     // change the address from array to string
     NSArray *addressArray = *ioValue;
@@ -22,15 +24,6 @@
         }
     }
     self.address = address;
-    return YES;
-}
-
-- (BOOL)validateImageURL:(id *)ioValue error:(NSError **)outError {
-    if ([(NSString *)*ioValue length] > 0) {
-        self.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:(NSString *)*ioValue]];
-    } else {
-        // self.imageData = placeholder image
-    }
     return YES;
 }
 

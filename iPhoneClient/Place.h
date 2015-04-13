@@ -15,11 +15,10 @@
 @property (nonatomic, strong) NSNumber * longitude;
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * imageURL;
-@property (nonatomic, strong) NSData * imageData;
 @property (nonatomic, strong) NSArray * addressArray;
 @property (nonatomic, strong) NSString * address;
 @property (nonatomic, strong) NSString * phoneNumber;
-@property (nonatomic, strong) NSNumber * rating;
+@property (nonatomic, strong) NSString * rating;
 @property (nonatomic, strong) NSString * ID;
 @property (nonatomic, strong) NSNumber * distance;
 @property (nonatomic, strong) NSNumber * featuredValue;

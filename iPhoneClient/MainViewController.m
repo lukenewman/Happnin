@@ -129,7 +129,7 @@
 
 - (void)configureRestKit {
     // initialize AFNetworking HTTPClient
-    NSURL *baseURL = [NSURL URLWithString:@"http://agile-tor-1071.herokuapp.com"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://happnin.herokuapp.com"];
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     
     // initialize RestKit
