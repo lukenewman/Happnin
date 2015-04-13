@@ -13,17 +13,13 @@
 #import "Media.h"
 #import "Instagram.h"
 #import "Tweet.h"
+#import "Place.h"
 #import "PlaceDetailTableViewCell.h"
 #import "InstagramTableViewCell.h"
 #import "TweetTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface PlaceDetailTableViewController ()
-
-@property (weak, nonatomic) IBOutlet UIImageView *placeImage;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *callButton;
-@property (weak, nonatomic) IBOutlet UIButton *directionsButton;
 
 @property (strong, nonatomic) NSArray *medias;
 
@@ -97,7 +93,22 @@ static NSString *TweetCellIdentifier = @"TweetCell";
             cell = [nib objectAtIndex:0];
         }
         
-        // configure the place detail cell here
+        cell.nameLabel.text = self.place.name;
+        
+        CALayer *imageLayer = cell.placeImageView.layer;
+        [imageLayer setCornerRadius:10.0f];
+        [imageLayer setBorderWidth:1];
+        [imageLayer setMasksToBounds:YES];
+        [cell.placeImageView sd_setImageWithURL:[NSURL URLWithString:self.place.imageURL]
+                          placeholderImage:[UIImage imageNamed:@""]];
+        
+        [cell.callButton.layer setBorderWidth:1.0f];
+        [cell.callButton.layer setBorderColor:[UIColor colorWithRed:103.0/255.0 green:58.0/255.0 blue:183.0/255.0 alpha:1.0f].CGColor];
+        [cell.callButton.layer setCornerRadius:7.0f];
+    
+        [cell.directionsButton.layer setBorderWidth:1.0f];
+        [cell.directionsButton.layer setBorderColor:[UIColor colorWithRed:103.0/255.0 green:58.0/255.0 blue:183.0/255.0 alpha:1.0f].CGColor];
+        [cell.directionsButton.layer setCornerRadius:7.0f];
         
         return cell;
     } else if ([((Media *)self.medias[indexPath.row - 1]).type isEqualToString:@"Instagram"]) {

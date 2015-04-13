@@ -61,6 +61,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="callButton" destination="Iva-eY-Gr9" id="iFO-cO-Vxe"/>
+                <outlet property="directionsButton" destination="o7g-Wf-VO4" id="ffw-mu-h3B"/>
                 <outlet property="nameLabel" destination="SQe-Xi-weU" id="Hrl-6O-Ydz"/>
                 <outlet property="placeImageView" destination="Qcs-99-baz" id="Mms-PL-kLB"/>
             </connections>

@@ -11,7 +11,7 @@
 
 @interface PlaceDetailTableViewController : UITableViewController
 
-@property Place *place;
+@property (strong, nonatomic) Place *place;
 
 - (void)loadMedia;
 

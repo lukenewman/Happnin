@@ -12,5 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak, readwrite) IBOutlet UIImageView *placeImageView;
+@property (weak, nonatomic) IBOutlet UIButton *callButton;
+@property (weak, nonatomic) IBOutlet UIButton *directionsButton;
 
 @end
