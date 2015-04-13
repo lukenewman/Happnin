@@ -16,7 +16,7 @@
 
 @interface PlaceListTableViewController ()
 
-@property (nonatomic, strong) NSArray *venues;
+@property (nonatomic, strong) NSArray *places;
 
 @end
 
@@ -36,12 +36,12 @@ static NSString *PlaceCellIdentifier = @"PlaceCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.venues.count;
+    return self.places.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PlaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PlaceCellIdentifier forIndexPath:indexPath];
-    Place *place = self.venues[indexPath.row];
+    Place *place = self.places[indexPath.row];
     
     // name
     cell.nameLabel.text = place.name;
@@ -73,11 +73,6 @@ static NSString *PlaceCellIdentifier = @"PlaceCell";
     return 85;
 }
 
-- (void)imageDownloaded:(NSNotification *)notification{
-    NSLog(@"reloading data");
-    [self.tableView reloadData];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"showPlaceDetail" sender:self.tableView];
 }
@@ -89,7 +84,7 @@ static NSString *PlaceCellIdentifier = @"PlaceCell";
     
     if ([[segue identifier] isEqualToString:@"showPlaceDetail"]) {
         NSIndexPath *selectedPlaceIndex = [self.tableView indexPathForSelectedRow];
-        destViewController.place = self.venues[selectedPlaceIndex.row];
+        destViewController.place = self.places[selectedPlaceIndex.row];
         [destViewController loadMedia];
     }
 }
@@ -105,7 +100,7 @@ static NSString *PlaceCellIdentifier = @"PlaceCell";
     [[RKObjectManager sharedManager] getObjectsAtPath:@"/places"
                                            parameters:parameters
      success: ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-         self.venues = mappingResult.array;
+         self.places = mappingResult.array;
          [self.tableView reloadData];
      }
      failure: ^(RKObjectRequestOperation *operation, NSError *error) {

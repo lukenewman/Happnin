@@ -20,7 +20,7 @@
                             <constraint firstAttribute="width" constant="196" id="uZe-90-SUH"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-Wf-VO4">
@@ -29,6 +29,7 @@
                             <constraint firstAttribute="width" secondItem="o7g-Wf-VO4" secondAttribute="height" multiplier="11:3" id="dqO-qq-PAn"/>
                         </constraints>
                         <state key="normal" title="Show in Maps">
+                            <color key="titleColor" red="0.4039215686" green="0.2274509804" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -38,6 +39,7 @@
                             <constraint firstAttribute="width" secondItem="Iva-eY-Gr9" secondAttribute="height" multiplier="11:3" id="6gI-Yd-Dqu"/>
                         </constraints>
                         <state key="normal" title="Call">
+                            <color key="titleColor" red="0.4039215686" green="0.2274509804" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>

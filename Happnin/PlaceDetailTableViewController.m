@@ -38,23 +38,6 @@ static NSString *TweetCellIdentifier = @"TweetCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"PlaceDetailCell" bundle:nil] forCellReuseIdentifier:PlaceDetailCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"InstagramCell" bundle:nil] forCellReuseIdentifier:InstagramCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:TweetCellIdentifier];
-    
-    // put this in cell for row at index path
-//    [self.callButton.layer setBorderWidth:1.0f];
-//    [self.callButton.layer setBorderColor:[UIColor colorWithRed:103.0/255.0 green:58.0/255.0 blue:183.0/255.0 alpha:1.0f].CGColor];
-//    [self.callButton.layer setCornerRadius:7.0f];
-//    
-//    [self.directionsButton.layer setBorderWidth:1.0f];
-//    [self.directionsButton.layer setBorderColor:[UIColor colorWithRed:103.0/255.0 green:58.0/255.0 blue:183.0/255.0 alpha:1.0f].CGColor];
-//    [self.directionsButton.layer setCornerRadius:7.0f];
-//    
-//    CALayer *imageLayer = self.placeImage.layer;
-//    [imageLayer setCornerRadius:10.0f];
-//    [imageLayer setBorderWidth:1];
-//    [imageLayer setMasksToBounds:YES];
-//    self.placeImage.image = [UIImage imageWithData:self.place.imageData];
-//    
-//    self.nameLabel.text = self.place.name;
 }
 
 - (IBAction)callPlace:(id)sender {
@@ -87,43 +70,37 @@ static NSString *TweetCellIdentifier = @"TweetCell";
     if (indexPath.row == 0) {
         PlaceDetailTableViewCell *cell = (PlaceDetailTableViewCell *)[tableView dequeueReusableCellWithIdentifier:PlaceDetailCellIdentifier forIndexPath:indexPath];
         
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PlaceDetailCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        
         cell.nameLabel.text = self.place.name;
         
         CALayer *imageLayer = cell.placeImageView.layer;
         [imageLayer setCornerRadius:10.0f];
         [imageLayer setBorderWidth:1];
         [imageLayer setMasksToBounds:YES];
-        [cell.placeImageView sd_setImageWithURL:[NSURL URLWithString:self.place.imageURL]
-                          placeholderImage:[UIImage imageNamed:@""]];
+        [cell.placeImageView sd_setImageWithURL:[NSURL URLWithString:self.place.imageURL]];
         
         [cell.callButton.layer setBorderWidth:1.0f];
         [cell.callButton.layer setBorderColor:[UIColor colorWithRed:103.0/255.0 green:58.0/255.0 blue:183.0/255.0 alpha:1.0f].CGColor];
         [cell.callButton.layer setCornerRadius:7.0f];
+        [cell.callButton addTarget:self action:@selector(callPlace:) forControlEvents:UIControlEventTouchUpInside];
     
         [cell.directionsButton.layer setBorderWidth:1.0f];
         [cell.directionsButton.layer setBorderColor:[UIColor colorWithRed:103.0/255.0 green:58.0/255.0 blue:183.0/255.0 alpha:1.0f].CGColor];
         [cell.directionsButton.layer setCornerRadius:7.0f];
+        [cell.directionsButton addTarget:self action:@selector(showDirections:) forControlEvents:UIControlEventTouchUpInside];
         
         return cell;
     } else if ([((Media *)self.medias[indexPath.row - 1]).type isEqualToString:@"Instagram"]) {
         InstagramTableViewCell *cell = (InstagramTableViewCell *)[tableView dequeueReusableCellWithIdentifier:InstagramCellIdentifier forIndexPath:indexPath];
         
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"InstagramCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        
         Instagram *post = (Instagram *)self.medias[indexPath.row];
         
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:post.imageURL]
-                                 placeholderImage:[UIImage imageNamed:@""]];
+        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:post.imageURL]];
+        
+        CALayer *imageLayer = cell.userImageView.layer;
+        [imageLayer setCornerRadius:cell.userImageView.frame.size.width / 2];
+        [imageLayer setBorderWidth:1];
+        [imageLayer setMasksToBounds:YES];
+        [cell.userImageView sd_setImageWithURL:[NSURL URLWithString:post.profileImageURL]];
         
         cell.usernameLabel.text = post.username;
         
@@ -133,20 +110,13 @@ static NSString *TweetCellIdentifier = @"TweetCell";
     } else if ([((Media *)self.medias[indexPath.row - 1]).type isEqualToString:@"Twitter"]) {
         TweetTableViewCell *cell = (TweetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:TweetCellIdentifier forIndexPath:indexPath];
         
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TweetCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        
         Tweet *post = (Tweet *)self.medias[indexPath.row];
         
         CALayer *imageLayer = cell.profileImageView.layer;
         [imageLayer setCornerRadius:cell.profileImageView.frame.size.width / 2];
         [imageLayer setBorderWidth:1];
         [imageLayer setMasksToBounds:YES];
-        [cell.profileImageView sd_setImageWithURL:[NSURL URLWithString:post.profileImageURL]
-                                 placeholderImage:[UIImage imageNamed:@""]];
+        [cell.profileImageView sd_setImageWithURL:[NSURL URLWithString:post.profileImageURL]];
         
         cell.usernameLabel.text = post.username;
         
@@ -154,7 +124,6 @@ static NSString *TweetCellIdentifier = @"TweetCell";
         
         return cell;
     } else {
-        // some error -- not sure what to do in this case
         NSLog(@"ERROR");
         return nil;
     }
@@ -175,8 +144,6 @@ static NSString *TweetCellIdentifier = @"TweetCell";
 #pragma mark - RestKit
 
 - (void)loadMedia {
-    NSLog(@"loading media");
-    
     NSString *locString = [NSString stringWithFormat:@"%@,%@", self.place.latitude, self.place.longitude];
     
     NSDictionary *parameters = @{

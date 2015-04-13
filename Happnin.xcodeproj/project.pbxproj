@@ -25,10 +25,11 @@
 		3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182701A9FB78B0096BD52 /* Main.storyboard */; };
 		3F7182741A9FB78B0096BD52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182731A9FB78B0096BD52 /* Images.xcassets */; };
 		3F7182771A9FB78B0096BD52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182751A9FB78B0096BD52 /* LaunchScreen.xib */; };
-		3F7182831A9FB78B0096BD52 /* iPhoneClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182821A9FB78B0096BD52 /* iPhoneClientTests.m */; };
+		3F7182831A9FB78B0096BD52 /* HappninTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182821A9FB78B0096BD52 /* HappninTests.m */; };
 		3F765B661AC303970042028C /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F765B651AC303970042028C /* MappingProvider.m */; };
 		3FD6F4431AC90C4C00BBAC93 /* PlaceDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6F4421AC90C4C00BBAC93 /* PlaceDetailTableViewController.m */; };
 		3FE4F6E51ADAFA7700E394F7 /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE4F6E41ADAFA7700E394F7 /* PlaceCell.xib */; };
+		3FEB392A1ADC065800E72634 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F7182811A9FB78B0096BD52 /* Info.plist */; };
 		6783D71B8856D918112200F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 944350A05266297D57216CD2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +78,7 @@
 		3F7182761A9FB78B0096BD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3F71827C1A9FB78B0096BD52 /* HappninTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappninTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7182811A9FB78B0096BD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F7182821A9FB78B0096BD52 /* iPhoneClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPhoneClientTests.m; sourceTree = "<group>"; };
+		3F7182821A9FB78B0096BD52 /* HappninTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappninTests.m; sourceTree = "<group>"; };
 		3F765B641AC303970042028C /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
 		3F765B651AC303970042028C /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
 		3FD6F4411AC90C4C00BBAC93 /* PlaceDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailTableViewController.h; sourceTree = "<group>"; };
@@ -109,8 +110,8 @@
 		3F7182571A9FB78B0096BD52 = {
 			isa = PBXGroup;
 			children = (
-				3F7182621A9FB78B0096BD52 /* iPhoneClient */,
-				3F71827F1A9FB78B0096BD52 /* iPhoneClientTests */,
+				3F7182621A9FB78B0096BD52 /* Happnin */,
+				3F71827F1A9FB78B0096BD52 /* HappninTests */,
 				3F7182611A9FB78B0096BD52 /* Products */,
 				547E763150DF66DAEAD8EA87 /* Pods */,
 				49C915BE827F1AEFEB41921E /* Frameworks */,
@@ -126,7 +127,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F7182621A9FB78B0096BD52 /* iPhoneClient */ = {
+		3F7182621A9FB78B0096BD52 /* Happnin */ = {
 			isa = PBXGroup;
 			children = (
 				3F7182671A9FB78B0096BD52 /* AppDelegate.h */,
@@ -164,7 +165,7 @@
 				3F42D66F1AC1B70900E1E274 /* Media.h */,
 				3F42D6701AC1B70900E1E274 /* Media.m */,
 			);
-			path = iPhoneClient;
+			path = Happnin;
 			sourceTree = "<group>";
 		};
 		3F7182631A9FB78B0096BD52 /* Supporting Files */ = {
@@ -176,13 +177,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3F71827F1A9FB78B0096BD52 /* iPhoneClientTests */ = {
+		3F71827F1A9FB78B0096BD52 /* HappninTests */ = {
 			isa = PBXGroup;
 			children = (
-				3F7182821A9FB78B0096BD52 /* iPhoneClientTests.m */,
+				3F7182821A9FB78B0096BD52 /* HappninTests.m */,
 				3F7182801A9FB78B0096BD52 /* Supporting Files */,
 			);
-			path = iPhoneClientTests;
+			path = HappninTests;
 			sourceTree = "<group>";
 		};
 		3F7182801A9FB78B0096BD52 /* Supporting Files */ = {
@@ -293,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FEB392A1ADC065800E72634 /* Info.plist in Resources */,
 				3F4A4EF31AD55E3500BDE526 /* InstagramCell.xib in Resources */,
 				3F4A4EF81AD563EB00BDE526 /* TweetCell.xib in Resources */,
 				3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */,
@@ -371,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F7182831A9FB78B0096BD52 /* iPhoneClientTests.m in Sources */,
+				3F7182831A9FB78B0096BD52 /* HappninTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +490,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = iPhoneClient/Info.plist;
+				INFOPLIST_FILE = Happnin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Happnin;
 				PROVISIONING_PROFILE = "";
@@ -502,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = iPhoneClient/Info.plist;
+				INFOPLIST_FILE = Happnin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Happnin;
 				PROVISIONING_PROFILE = "";
@@ -521,7 +523,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = iPhoneClientTests/Info.plist;
+				INFOPLIST_FILE = HappninTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = HappninTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Happnin.app/Happnin";
@@ -536,7 +538,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = iPhoneClientTests/Info.plist;
+				INFOPLIST_FILE = HappninTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = HappninTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Happnin.app/Happnin";
