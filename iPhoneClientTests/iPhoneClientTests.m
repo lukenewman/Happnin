@@ -1,6 +1,6 @@
 //
-//  HappninTests.m
-//  HappninTests
+//  iPhoneClientTests.m
+//  iPhoneClientTests
 //
 //  Created by Luke Newman on 2/26/15.
 //  Copyright (c) 2015 Luke Newman. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface HappninTests : XCTestCase
+@interface iPhoneClientTests : XCTestCase
 
 @end
 
-@implementation HappninTests
+@implementation iPhoneClientTests
 
 - (void)setUp {
     [super setUp];
