@@ -20,4 +20,24 @@
     // Configure the view for the selected state
 }
 
+// (1)
+- (void)setBounds:(CGRect)bounds
+{
+    [super setBounds:bounds];
+    
+    self.contentView.frame = self.bounds;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    // (2)
+    [self.contentView updateConstraintsIfNeeded];
+    [self.contentView layoutIfNeeded];
+    
+    // (3)
+    self.tweetTextLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.tweetTextLabel.frame);
+}
+
 @end

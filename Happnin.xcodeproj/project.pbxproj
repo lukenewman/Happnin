@@ -7,17 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2363531ADF030F004B0CEB /* ComicNeue-Angular-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F23634D1ADF030F004B0CEB /* ComicNeue-Angular-Light.ttf */; };
+		3F2363551ADF030F004B0CEB /* ComicNeue-Angular-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F23634F1ADF030F004B0CEB /* ComicNeue-Angular-Regular.ttf */; };
+		3F2363581ADF04FD004B0CEB /* cheddar jack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F2363571ADF04FD004B0CEB /* cheddar jack.ttf */; };
 		3F42D6711AC1B70900E1E274 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6701AC1B70900E1E274 /* Media.m */; };
 		3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6731AC1B70A00E1E274 /* Tweet.m */; };
 		3F42D67A1AC1B70A00E1E274 /* Instagram.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D6791AC1B70A00E1E274 /* Instagram.m */; };
 		3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F42D67C1AC1B70A00E1E274 /* Place.m */; };
 		3F4A4EF31AD55E3500BDE526 /* InstagramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A4EF21AD55E3500BDE526 /* InstagramCell.xib */; };
-		3F4A4EF61AD55F0900BDE526 /* InstagramTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A4EF51AD55F0900BDE526 /* InstagramTableViewCell.m */; };
 		3F4A4EF81AD563EB00BDE526 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */; };
 		3F4A4EFB1AD5644100BDE526 /* TweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */; };
 		3F4A4EFD1AD656F700BDE526 /* PlaceDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A4EFC1AD656F700BDE526 /* PlaceDetailCell.xib */; };
 		3F4A4F001AD6570600BDE526 /* PlaceDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A4EFF1AD6570600BDE526 /* PlaceDetailTableViewCell.m */; };
 		3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55C3571AB6312F00F1A898 /* MainViewController.m */; };
+		3F5B45C31ADC593900322CD0 /* InstagramTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B45C21ADC593900322CD0 /* InstagramTableViewCell.m */; };
 		3F60008C1ADAFBCE00E4E529 /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F60008B1ADAFBCE00E4E529 /* PlaceTableViewCell.m */; };
 		3F7182661A9FB78B0096BD52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182651A9FB78B0096BD52 /* main.m */; };
 		3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7182681A9FB78B0096BD52 /* AppDelegate.m */; };
@@ -45,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		0D6116F140468124AC27DF66 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3F23634D1ADF030F004B0CEB /* ComicNeue-Angular-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ComicNeue-Angular-Light.ttf"; sourceTree = "<group>"; };
+		3F23634F1ADF030F004B0CEB /* ComicNeue-Angular-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ComicNeue-Angular-Regular.ttf"; sourceTree = "<group>"; };
+		3F2363571ADF04FD004B0CEB /* cheddar jack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cheddar jack.ttf"; sourceTree = "<group>"; };
 		3F42D66F1AC1B70900E1E274 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
 		3F42D6701AC1B70900E1E274 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
 		3F42D6721AC1B70A00E1E274 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
@@ -54,8 +60,6 @@
 		3F42D67B1AC1B70A00E1E274 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		3F42D67C1AC1B70A00E1E274 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		3F4A4EF21AD55E3500BDE526 /* InstagramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramCell.xib; sourceTree = "<group>"; };
-		3F4A4EF41AD55F0900BDE526 /* InstagramTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramTableViewCell.h; sourceTree = "<group>"; };
-		3F4A4EF51AD55F0900BDE526 /* InstagramTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramTableViewCell.m; sourceTree = "<group>"; };
 		3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
 		3F4A4EF91AD5644100BDE526 /* TweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTableViewCell.h; sourceTree = "<group>"; };
 		3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTableViewCell.m; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 		3F4A4EFF1AD6570600BDE526 /* PlaceDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetailTableViewCell.m; sourceTree = "<group>"; };
 		3F55C3561AB6312F00F1A898 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3F55C3571AB6312F00F1A898 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3F5B45C11ADC593900322CD0 /* InstagramTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramTableViewCell.h; sourceTree = "<group>"; };
+		3F5B45C21ADC593900322CD0 /* InstagramTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramTableViewCell.m; sourceTree = "<group>"; };
 		3F60008A1ADAFBCE00E4E529 /* PlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
 		3F60008B1ADAFBCE00E4E529 /* PlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewCell.m; sourceTree = "<group>"; };
 		3F7182601A9FB78B0096BD52 /* Happnin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happnin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +113,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2363561ADF0324004B0CEB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F2363571ADF04FD004B0CEB /* cheddar jack.ttf */,
+				3F23634D1ADF030F004B0CEB /* ComicNeue-Angular-Light.ttf */,
+				3F23634F1ADF030F004B0CEB /* ComicNeue-Angular-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		3F7182571A9FB78B0096BD52 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +146,7 @@
 		3F7182621A9FB78B0096BD52 /* Happnin */ = {
 			isa = PBXGroup;
 			children = (
+				3F2363561ADF0324004B0CEB /* Resources */,
 				3F7182671A9FB78B0096BD52 /* AppDelegate.h */,
 				3F7182681A9FB78B0096BD52 /* AppDelegate.m */,
 				3F765B641AC303970042028C /* MappingProvider.h */,
@@ -148,8 +165,8 @@
 				3F4A4EFE1AD6570600BDE526 /* PlaceDetailTableViewCell.h */,
 				3F4A4EFF1AD6570600BDE526 /* PlaceDetailTableViewCell.m */,
 				3F4A4EF21AD55E3500BDE526 /* InstagramCell.xib */,
-				3F4A4EF41AD55F0900BDE526 /* InstagramTableViewCell.h */,
-				3F4A4EF51AD55F0900BDE526 /* InstagramTableViewCell.m */,
+				3F5B45C11ADC593900322CD0 /* InstagramTableViewCell.h */,
+				3F5B45C21ADC593900322CD0 /* InstagramTableViewCell.m */,
 				3F4A4EF71AD563EB00BDE526 /* TweetCell.xib */,
 				3F4A4EF91AD5644100BDE526 /* TweetTableViewCell.h */,
 				3F4A4EFA1AD5644100BDE526 /* TweetTableViewCell.m */,
@@ -295,10 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FEB392A1ADC065800E72634 /* Info.plist in Resources */,
+				3F2363581ADF04FD004B0CEB /* cheddar jack.ttf in Resources */,
 				3F4A4EF31AD55E3500BDE526 /* InstagramCell.xib in Resources */,
+				3F2363531ADF030F004B0CEB /* ComicNeue-Angular-Light.ttf in Resources */,
 				3F4A4EF81AD563EB00BDE526 /* TweetCell.xib in Resources */,
 				3F7182721A9FB78B0096BD52 /* Main.storyboard in Resources */,
 				3F7182771A9FB78B0096BD52 /* LaunchScreen.xib in Resources */,
+				3F2363551ADF030F004B0CEB /* ComicNeue-Angular-Regular.ttf in Resources */,
 				3FE4F6E51ADAFA7700E394F7 /* PlaceCell.xib in Resources */,
 				3F4A4EFD1AD656F700BDE526 /* PlaceDetailCell.xib in Resources */,
 				3F7182741A9FB78B0096BD52 /* Images.xcassets in Resources */,
@@ -356,13 +376,13 @@
 				3FD6F4431AC90C4C00BBAC93 /* PlaceDetailTableViewController.m in Sources */,
 				3F60008C1ADAFBCE00E4E529 /* PlaceTableViewCell.m in Sources */,
 				3F42D6711AC1B70900E1E274 /* Media.m in Sources */,
-				3F4A4EF61AD55F0900BDE526 /* InstagramTableViewCell.m in Sources */,
 				3F7182691A9FB78B0096BD52 /* AppDelegate.m in Sources */,
 				3F4A4F001AD6570600BDE526 /* PlaceDetailTableViewCell.m in Sources */,
 				3F42D6741AC1B70A00E1E274 /* Tweet.m in Sources */,
 				3F55C3581AB6312F00F1A898 /* MainViewController.m in Sources */,
 				3F42D67D1AC1B70A00E1E274 /* Place.m in Sources */,
 				3F4A4EFB1AD5644100BDE526 /* TweetTableViewCell.m in Sources */,
+				3F5B45C31ADC593900322CD0 /* InstagramTableViewCell.m in Sources */,
 				3F71826C1A9FB78B0096BD52 /* PlaceListTableViewController.m in Sources */,
 				3F7182661A9FB78B0096BD52 /* main.m in Sources */,
 				3F42D67A1AC1B70A00E1E274 /* Instagram.m in Sources */,

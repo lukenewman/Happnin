@@ -10,6 +10,6 @@
 
 @interface PlaceListTableViewController : UITableViewController
 
-- (void)loadVenuesWithSection:(NSString *)section;
+- (void)loadVenuesWithSection:(NSString *)section andCoordinate:(NSString *)coordinateString;
 
 @end

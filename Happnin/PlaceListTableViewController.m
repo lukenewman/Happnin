@@ -25,8 +25,12 @@
 static NSString *PlaceCellIdentifier = @"PlaceCell";
 
 - (void)viewDidLoad {
-//    [self.tableView registerClass:[PlaceTableViewCell class] forCellReuseIdentifier:PlaceCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"PlaceCell" bundle:nil] forCellReuseIdentifier:PlaceCellIdentifier];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"HelveticaNeue-Light" size:23.0], NSFontAttributeName, nil]];
 }
 
 #pragma mark - Table View
@@ -51,11 +55,14 @@ static NSString *PlaceCellIdentifier = @"PlaceCell";
                            placeholderImage:[UIImage imageNamed:@"barbuttonicon"]];
     CALayer *imageLayer = cell.placeImageView.layer;
     [imageLayer setCornerRadius:cell.placeImageView.frame.size.width / 2];
-    [imageLayer setBorderWidth:1];
+    //[imageLayer setBorderWidth:1];
     [imageLayer setMasksToBounds:YES];
     
     // display rating
-    NSString *ratingString = [NSString stringWithFormat:@"⭐️%@", place.rating];
+    NSMutableString *ratingString = [[NSMutableString alloc] initWithString:@""];
+    for (int i = 0; i < [place.rating intValue]; i++) {
+        [ratingString appendString:@"⭐️"];
+    }
     cell.ratingLabel.text = ratingString;
     
     // display street address only
@@ -91,7 +98,7 @@ static NSString *PlaceCellIdentifier = @"PlaceCell";
 
 #pragma mark - RESTKit
 
-- (void)loadVenuesWithSection:(NSString *)section {
+- (void)loadVenuesWithSection:(NSString *)section andCoordinate:(NSString *)coordinateString {
     NSDictionary *parameters = @{
                                  @"loc": @"33.782139,-84.382166",
                                  @"section": section

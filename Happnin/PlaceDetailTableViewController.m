@@ -32,7 +32,7 @@ static NSString *InstagramCellIdentifier = @"InstagramCell";
 static NSString *TweetCellIdentifier = @"TweetCell";
 
 - (void)viewDidLoad {
-    self.navigationController.hidesBarsOnSwipe = YES;
+//    self.navigationController.hidesBarsOnSwipe = YES;
     self.navigationItem.title = self.place.name;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"PlaceDetailCell" bundle:nil] forCellReuseIdentifier:PlaceDetailCellIdentifier];
@@ -74,7 +74,7 @@ static NSString *TweetCellIdentifier = @"TweetCell";
         
         CALayer *imageLayer = cell.placeImageView.layer;
         [imageLayer setCornerRadius:10.0f];
-        [imageLayer setBorderWidth:1];
+        //[imageLayer setBorderWidth:1];
         [imageLayer setMasksToBounds:YES];
         [cell.placeImageView sd_setImageWithURL:[NSURL URLWithString:self.place.imageURL]];
         
@@ -92,13 +92,13 @@ static NSString *TweetCellIdentifier = @"TweetCell";
     } else if ([((Media *)self.medias[indexPath.row - 1]).type isEqualToString:@"Instagram"]) {
         InstagramTableViewCell *cell = (InstagramTableViewCell *)[tableView dequeueReusableCellWithIdentifier:InstagramCellIdentifier forIndexPath:indexPath];
         
-        Instagram *post = (Instagram *)self.medias[indexPath.row];
+        Instagram *post = (Instagram *)self.medias[indexPath.row - 1];
         
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:post.imageURL]];
+        [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:post.imageURL]];
         
         CALayer *imageLayer = cell.userImageView.layer;
         [imageLayer setCornerRadius:cell.userImageView.frame.size.width / 2];
-        [imageLayer setBorderWidth:1];
+        //[imageLayer setBorderWidth:1];
         [imageLayer setMasksToBounds:YES];
         [cell.userImageView sd_setImageWithURL:[NSURL URLWithString:post.profileImageURL]];
         
@@ -110,13 +110,13 @@ static NSString *TweetCellIdentifier = @"TweetCell";
     } else if ([((Media *)self.medias[indexPath.row - 1]).type isEqualToString:@"Twitter"]) {
         TweetTableViewCell *cell = (TweetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:TweetCellIdentifier forIndexPath:indexPath];
         
-        Tweet *post = (Tweet *)self.medias[indexPath.row];
+        Tweet *post = (Tweet *)self.medias[indexPath.row - 1];
         
-        CALayer *imageLayer = cell.profileImageView.layer;
-        [imageLayer setCornerRadius:cell.profileImageView.frame.size.width / 2];
-        [imageLayer setBorderWidth:1];
+        CALayer *imageLayer = cell.userImageView.layer;
+        [imageLayer setCornerRadius:cell.userImageView.frame.size.width / 2];
+        //[imageLayer setBorderWidth:1];
         [imageLayer setMasksToBounds:YES];
-        [cell.profileImageView sd_setImageWithURL:[NSURL URLWithString:post.profileImageURL]];
+        [cell.userImageView sd_setImageWithURL:[NSURL URLWithString:post.profileImageURL]];
         
         cell.usernameLabel.text = post.username;
         
@@ -138,6 +138,17 @@ static NSString *TweetCellIdentifier = @"TweetCell";
         return 445;
     } else {
         return 76;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0)
+    {
+        // set the navigation bar view to the place picture and name
+        UIImage *placeImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.place.imageURL]]];
+        [[UINavigationBar appearance] setBackgroundImage:placeImage forBarMetrics:UIBarMetricsDefault];
+//        self.navigationItem.title = self.place.name;
     }
 }
 

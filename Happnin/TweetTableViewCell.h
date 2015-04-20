@@ -10,7 +10,7 @@
 
 @interface TweetTableViewCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *userImageView;
 @property (nonatomic, weak) IBOutlet UILabel *usernameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *tweetTextLabel;
 

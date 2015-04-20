@@ -56,7 +56,6 @@
     [instagramMapping addAttributeMappingsFromDictionary:
      @{
        @"mediaType": @"type",
-       @"type": @"typeOfMedia",
        @"createdAt": @"createdAt",
        @"imageURL": @"imageURL",
        @"username": @"username",

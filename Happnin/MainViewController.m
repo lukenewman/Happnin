@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *restaurantsButton;
 @property (weak, nonatomic) IBOutlet UIButton *clubsButton;
 @property (weak, nonatomic) IBOutlet UIButton *cafesButton;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) UIBarButtonItem *searchBarButton;
 
 @property (strong, nonatomic) UIColor *mainPurpleColor;
 @property CLLocation *currentLocation;
@@ -28,12 +31,34 @@
 
 @implementation MainViewController
 
+#pragma mark - Setters
+
 - (UIColor *)mainPurpleColor {
     if (!_mainPurpleColor) {
         _mainPurpleColor = [UIColor colorWithRed:103.0/255.0 green:58.0/255.0 blue:183.0/255.0 alpha:1.0f];
     }
     return _mainPurpleColor;
 }
+
+- (UISearchBar *)searchBar {
+    if (!_searchBar) {
+        _searchBar = [[UISearchBar alloc] init];
+        _searchBar.placeholder = @"Search a different location";
+        _searchBar.delegate = self;
+        _searchBar.showsCancelButton = YES;
+    }
+    return _searchBar;
+}
+
+- (UIBarButtonItem *)searchBarButton {
+    if (!_searchBarButton) {
+        _searchBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(showSearchBar)];
+        NSLog(@"created search button");
+    }
+    return _searchBarButton;
+}
+
+#pragma mark - View Methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,6 +67,7 @@
     [self configureLocationManager];
     
     self.navigationItem.title = @"Happnin";
+    self.navigationItem.rightBarButtonItem = self.searchBarButton;
     
     [self.barsButton.layer setBorderWidth:1.0f];
     [self.barsButton.layer setBorderColor:self.mainPurpleColor.CGColor];
@@ -60,45 +86,34 @@
     [self.cafesButton.layer setCornerRadius:10.0f];
 }
 
-//- (IBAction)searchButtonTapped:(id)sender {
-//    NSLog(@"search button tapped");
-//    // animate some sort of search bar across the navigation bar
-//    // the user will enter in a location
-//    // somehow handle getting the keyboard out of the way
-//    // when a section button is tapped, take the string out of the
-//    //   search bar and use that as the search location
-//    
-//    // use the search bar content as geocodeAddressString
-//    // the following code would be run when the button is tapped
-//    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-//    [geocoder geocodeAddressString:@"6138 Bollinger Road, San Jose, United States" completionHandler:^(NSArray* placemarks, NSError* error){
-//        for (CLPlacemark* aPlacemark in placemarks)
-//        {
-//            // Process the placemark.
-//            NSString *latDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.latitude];
-//            NSString *lngDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.longitude];
-//            NSLog(@"lat: %@, lng: %@", latDest1, lngDest1);
-//        }
-//    }];
-//}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"CheddarJack" size:37.0], NSFontAttributeName, nil]];
+}
 
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     PlaceListTableViewController *destViewController = (PlaceListTableViewController *)[segue destinationViewController];
     
+    NSString *coordinateString = [NSString stringWithFormat:@"%f,%f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude];
+    
     if ([[segue identifier] isEqualToString:@"showRestaurants"]) {
         destViewController.navigationItem.title = @"Restaurants";
-        [destViewController loadVenuesWithSection:@"restaurants"];
+        [destViewController loadVenuesWithSection:@"restaurants" andCoordinate:coordinateString];
     } else if ([[segue identifier] isEqualToString:@"showBars"]) {
         destViewController.navigationItem.title = @"Bars";
-        [destViewController loadVenuesWithSection:@"bars"];
+        [destViewController loadVenuesWithSection:@"bars" andCoordinate:coordinateString];
     } else if ([[segue identifier] isEqualToString:@"showClubs"]) {
         destViewController.navigationItem.title = @"Clubs";
-        [destViewController loadVenuesWithSection:@"danceclubs"];
+        [destViewController loadVenuesWithSection:@"danceclubs" andCoordinate:coordinateString];
     } else if ([[segue identifier] isEqualToString:@"showCafes"]) {
         destViewController.navigationItem.title = @"Cafes";
-        [destViewController loadVenuesWithSection:@"cafes"];
+        [destViewController loadVenuesWithSection:@"cafes" andCoordinate:coordinateString];
     }
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
@@ -107,6 +122,33 @@
                                    target: nil action: nil];
     
     [self.navigationItem setBackBarButtonItem: backButton];
+}
+
+#pragma mark - Searching Another Location
+
+- (void)showSearchBar {
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.titleView = self.searchBar;
+}
+
+- (void)hideSearchBar {
+    self.navigationItem.rightBarButtonItem = self.searchBarButton;
+    self.navigationItem.titleView = nil;
+}
+
+// user tapped 'cancel' next to search bar
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self hideSearchBar];
+}
+
+// user tapped 'search' on keyboard
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    if (searchBar.text != nil) {
+        self.locationLabel.text = [NSString stringWithFormat:@"in %@", searchBar.text];
+    }
+    // TODO change the current location to whatever was searched
+    [searchBar resignFirstResponder];
+    [self hideSearchBar];
 }
 
 #pragma mark - Location Manager
@@ -121,8 +163,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     self.currentLocation = newLocation;
-    NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
-    NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+    NSLog(@"Location: %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
 }
 
 #pragma mark - RestKit
