@@ -100,7 +100,7 @@ static NSString *PlaceCellIdentifier = @"PlaceCell";
 
 - (void)loadVenuesWithSection:(NSString *)section andCoordinate:(NSString *)coordinateString {
     NSDictionary *parameters = @{
-                                 @"loc": @"33.782139,-84.382166",
+                                 @"loc": [coordinateString isEqualToString:@"0.000000,0.000000"] ? @"33.782139,-84.382166" : coordinateString,
                                  @"section": section
                                  };
     

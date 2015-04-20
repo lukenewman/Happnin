@@ -53,7 +53,6 @@
 - (UIBarButtonItem *)searchBarButton {
     if (!_searchBarButton) {
         _searchBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(showSearchBar)];
-        NSLog(@"created search button");
     }
     return _searchBarButton;
 }
@@ -144,9 +143,19 @@
 // user tapped 'search' on keyboard
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     if (searchBar.text != nil) {
-        self.locationLabel.text = [NSString stringWithFormat:@"in %@", searchBar.text];
+        NSString *newLocation = searchBar.text;
+        self.locationLabel.text = [NSString stringWithFormat:@"in %@", newLocation];
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (placemarks.count > 0) {
+                CLPlacemark *placemark = [placemarks firstObject];
+                self.currentLocation = placemark.location;
+                NSLog(@"setting new location: %@", self.currentLocation);
+            } else {
+                NSLog(@"error with error: %@", error);
+            }
+        }];
     }
-    // TODO change the current location to whatever was searched
     [searchBar resignFirstResponder];
     [self hideSearchBar];
 }

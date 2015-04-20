@@ -72,6 +72,12 @@ static NSString *TweetCellIdentifier = @"TweetCell";
         
         cell.nameLabel.text = self.place.name;
         
+        NSMutableString *ratingString = [[NSMutableString alloc] initWithString:@""];
+        for (int i = 0; i < [self.place.rating intValue]; i++) {
+            [ratingString appendString:@"⭐️"];
+        }
+        cell.ratingLabel.text = ratingString;
+        
         CALayer *imageLayer = cell.placeImageView.layer;
         [imageLayer setCornerRadius:10.0f];
         //[imageLayer setBorderWidth:1];

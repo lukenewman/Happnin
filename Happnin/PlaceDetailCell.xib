@@ -13,6 +13,20 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1m5-p8-IwJ" id="J1k-F1-Ss7">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQe-Xi-weU">
+                        <rect key="frame" x="116" y="8" width="196" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="196" id="uZe-90-SUH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="uZe-90-SUH"/>
+                            </mask>
+                        </variation>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-eY-Gr9">
                         <rect key="frame" x="8" y="130" width="140" height="30"/>
                         <state key="normal" title="Call">
@@ -34,23 +48,17 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQe-Xi-weU">
-                        <rect key="frame" x="116" y="8" width="196" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="196" id="uZe-90-SUH"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rating Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scj-S4-CEz">
+                        <rect key="frame" x="116" y="40" width="196" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="uZe-90-SUH"/>
-                            </mask>
-                        </variation>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Scj-S4-CEz" firstAttribute="top" secondItem="J1k-F1-Ss7" secondAttribute="topMargin" constant="39" id="1gA-PB-hhe"/>
                     <constraint firstItem="Qcs-99-baz" firstAttribute="top" secondItem="J1k-F1-Ss7" secondAttribute="topMargin" id="2sP-Br-Mv4"/>
+                    <constraint firstItem="Scj-S4-CEz" firstAttribute="leading" secondItem="Qcs-99-baz" secondAttribute="trailing" constant="8" id="3XC-Sa-Ryu"/>
                     <constraint firstAttribute="trailingMargin" secondItem="o7g-Wf-VO4" secondAttribute="trailing" priority="999" id="4wu-Dg-1wR"/>
                     <constraint firstItem="SQe-Xi-weU" firstAttribute="top" secondItem="J1k-F1-Ss7" secondAttribute="topMargin" id="71r-oK-amd"/>
                     <constraint firstItem="Iva-eY-Gr9" firstAttribute="top" secondItem="J1k-F1-Ss7" secondAttribute="topMargin" constant="122" id="BDs-ZT-e1o"/>
@@ -61,6 +69,7 @@
                     <constraint firstItem="SQe-Xi-weU" firstAttribute="leading" secondItem="J1k-F1-Ss7" secondAttribute="leadingMargin" constant="108" id="mtc-qr-SV4"/>
                     <constraint firstItem="SQe-Xi-weU" firstAttribute="trailing" secondItem="J1k-F1-Ss7" secondAttribute="trailingMargin" id="q0f-jE-u3O"/>
                     <constraint firstItem="o7g-Wf-VO4" firstAttribute="width" secondItem="Iva-eY-Gr9" secondAttribute="width" id="q5Z-Ki-VGL"/>
+                    <constraint firstItem="Scj-S4-CEz" firstAttribute="trailing" secondItem="J1k-F1-Ss7" secondAttribute="trailingMargin" id="wfH-vS-1gD"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -68,6 +77,7 @@
                 <outlet property="directionsButton" destination="o7g-Wf-VO4" id="ffw-mu-h3B"/>
                 <outlet property="nameLabel" destination="SQe-Xi-weU" id="Hrl-6O-Ydz"/>
                 <outlet property="placeImageView" destination="Qcs-99-baz" id="Mms-PL-kLB"/>
+                <outlet property="ratingLabel" destination="Scj-S4-CEz" id="7Of-Yg-6hU"/>
             </connections>
             <point key="canvasLocation" x="689" y="375"/>
         </tableViewCell>

@@ -11,8 +11,9 @@
 @interface PlaceDetailTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak, readwrite) IBOutlet UIImageView *placeImageView;
-@property (weak, nonatomic) IBOutlet UIButton *callButton;
-@property (weak, nonatomic) IBOutlet UIButton *directionsButton;
+@property (nonatomic, weak) IBOutlet UILabel *ratingLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *placeImageView;
+@property (nonatomic, weak) IBOutlet UIButton *callButton;
+@property (nonatomic, weak) IBOutlet UIButton *directionsButton;
 
 @end
