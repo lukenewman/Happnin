@@ -1,6 +1,6 @@
 #Happnin
 
-Please head over to the product site at [happnin.herokuapp.com](http://happnin.herokuapp.com) to learn more about the app.
+Please head over to the [product site](http://happnin.herokuapp.com) to learn more about the app.
 
 ###To-Do
 1. Implement the rating system
