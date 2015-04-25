@@ -2,7 +2,7 @@
 
 Please head over to the product site at [happnin.herokuapp.com](http://happnin.herokuapp.com).
 
-TODO:
+###To-Do
 1. Implement the rating system
 2. Add animation to search bar
 3. Tweak/improve the UI on the media list and place detail screen
